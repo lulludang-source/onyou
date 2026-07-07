@@ -69,11 +69,11 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--line-c);transition:transform .35s var(--ease)}
   header.hide{transform:translateY(-100%)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px;position:relative}
-  .nav-l,.nav-r{display:flex;gap:40px}
+  .nav-l,.nav-r{display:flex;gap:24px}
   .nav a{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .2s}
   .nav a:hover{opacity:1}
   .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block}
-  .brand-logo{height:19px;width:auto;display:block}
+  .brand-logo{height:19px;width:auto;display:block;filter:brightness(0)}
   .foot-logo-img{height:72px;width:auto;display:block;margin-bottom:14px}
   .ci-mark-img{width:96px;height:auto;display:block}
   .lang{font-size:12px;letter-spacing:.1em;opacity:.6}
@@ -281,6 +281,11 @@
     .bm-grid{grid-template-columns:repeat(3,1fr)}
     .ceo-grid{grid-template-columns:320px 1fr;gap:44px}
   }
+  @media(max-width:1080px){
+    .nav-l,.nav-r{display:none}
+    .burger{display:flex}
+    .mobile-menu.open{display:flex}
+  }
   @media(max-width:880px){
     .wrap{padding:0 26px}
     .nav-l,.nav-r{display:none}
@@ -319,8 +324,10 @@
 <header id="header">
   <div class="wrap nav">
     <div class="nav-l">
-      <a href="#business">Business</a>
       <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#business">Business</a>
+      <a href="#founder">Founder</a>
       <a href="#portfolio">Portfolio</a>
     </div>
     <a href="#top" class="brand" aria-label="ONYOU">
@@ -328,16 +335,16 @@
     </a>
     <div class="nav-r">
       <a href="#contact">Contact</a>
-      <a href="https://www.onyoucompany.co.kr" class="lang">KO</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#business">Business</a>
     <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#business">Business</a>
+    <a href="#founder">Founder</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
-    <a href="https://www.onyoucompany.co.kr">한국어 사이트</a>
   </div>
 </header>
 
@@ -385,7 +392,7 @@
   </section>
 
   <!-- SERVICES (black) -->
-  <section class="sec black" id="business">
+  <section class="sec black" id="services">
     <div class="wrap split">
       <div class="split-left reveal">
         <h2 class="giant" style="font-size:clamp(40px,5.6vw,88px)">Our<span class="sp"></span>Services</h2>
@@ -462,7 +469,7 @@
   </section>
 
   <!-- OBM FEATURE (full-bleed bg) -->
-  <section class="sec business-feat">
+  <section class="sec business-feat" id="business">
     <div class="wrap">
       <div class="bf-inner reveal">
         <span class="ey">Business</span>
@@ -474,7 +481,7 @@
   </section>
 
   <!-- CEO (black) -->
-  <section class="sec black">
+  <section class="sec black" id="founder">
     <div class="wrap">
       <h2 class="giant reveal" style="font-size:clamp(40px,6vw,104px)">Meet the<span class="sp"></span>Founder</h2>
       <div class="ceo-grid">
