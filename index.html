@@ -68,12 +68,10 @@
   .nav-l,.nav-r{display:flex;gap:40px}
   .nav a{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .2s}
   .nav a:hover{opacity:1}
-  .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:800;font-size:20px;letter-spacing:.06em;line-height:.95;text-align:center}
-  .brand-logo{height:26px;width:auto;display:block}
-  .brand-text{display:none}
+  .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block}
+  .brand-logo{height:19px;width:auto;display:block}
   .foot-logo-img{height:72px;width:auto;display:block;margin-bottom:14px}
   .ci-mark-img{width:96px;height:auto;display:block}
-  .brand small{display:block;font-size:9px;letter-spacing:.2em;font-weight:500;opacity:.6;margin-top:2px}
   .lang{font-size:12px;letter-spacing:.1em;opacity:.6}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;position:absolute;right:0;top:50%;transform:translateY(-50%)}
   .burger span{width:24px;height:1.6px;background:var(--ink)}
@@ -90,6 +88,15 @@
   .hero-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#b6b1a4}
   .hero-ph svg{width:78px;opacity:.5;fill:currentColor}
   .hero-cap{position:absolute;bottom:16px;left:20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8f8a7c}
+
+  /* Hero rolling carousel */
+  .hero-roll{margin-top:56px;width:100vw;margin-left:calc(50% - 50vw);position:relative;overflow:hidden;background:var(--cream-2);height:clamp(440px,50vw,640px)}
+  .hero-roll img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.1s var(--ease)}
+  .hero-roll img.active{opacity:1}
+  .hero-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
+  .hd{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(17,17,16,.3);transition:background .3s,transform .3s}
+  .hd.active{background:var(--orange);transform:scale(1.25)}
+  @media(max-width:640px){.hero-roll{height:clamp(480px,128vw,700px)}}
 
   /* Thin-line list w/ hover arrow */
   .split{display:grid;grid-template-columns:1fr 1.05fr;gap:64px}
@@ -117,6 +124,21 @@
   .tnum{margin-left:auto;font-size:12px;letter-spacing:.1em;padding-left:20px}
   .black .tnum{color:var(--mut-black)}
   .cream .tnum{color:var(--mut-cream)}
+
+  /* Services accordion */
+  .svc-head{cursor:pointer}
+  .svc-item:last-child .tlist-item{border-bottom:1px solid var(--line-b)}
+  .svc-plus{margin-left:22px;width:15px;height:15px;flex-shrink:0;position:relative;transition:transform .4s var(--ease)}
+  .svc-plus::before,.svc-plus::after{content:"";position:absolute;top:50%;left:0;width:15px;height:1.5px;background:var(--mut-black);transition:background .3s}
+  .svc-plus::after{transform:rotate(90deg)}
+  .svc-item.open .svc-plus{transform:rotate(135deg)}
+  .svc-item.open .svc-plus::before,.svc-item.open .svc-plus::after{background:var(--orange)}
+  .svc-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+  .svc-item.open .svc-detail{grid-template-rows:1fr}
+  .svc-detail-in{overflow:hidden}
+  .svc-detail ul{list-style:none;padding:4px 4px 30px;display:flex;flex-direction:column;gap:11px;max-width:640px}
+  .svc-detail li{position:relative;padding-left:20px;font-size:15px;line-height:1.55;color:#cbcac5}
+  .svc-detail li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:1px;background:var(--orange)}
 
   /* Feature (OBM) — image left, text right */
   .feat{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -287,9 +309,8 @@
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
     </div>
-    <a href="#top" class="brand">
-      <img class="brand-logo" src="images/logo/ONYOU-LOGO-05-SB-TEXT-H-GREY.png" alt="ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <span class="brand-text">ONYOU<small>Cosmetics Manufacturing</small></span>
+    <a href="#top" class="brand" aria-label="ONYOU">
+      <img class="brand-logo" src="images/logo/ONYOU-LOGO-03-MG-TEXT-GREY.png" alt="ONYOU">
     </a>
     <div class="nav-r">
       <a href="#contact">Contact</a>
@@ -314,10 +335,15 @@
       <h1 class="giant reveal">Cosmetics<br>made in Korea</h1>
       <p class="hero-sub reveal">Full OBM turnkey manufacturing for global beauty brands — from planning and formulation to production and export, built on two decades of Korean cosmetics expertise.</p>
     </div>
-    <div class="wrap"><div class="hero-img reveal">
-      <img src="images/hero.jpg" alt="ONYOU cosmetics manufacturing" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="hero-ph" style="display:none"><svg viewBox="0 0 64 64"><use href="#ppl"/></svg></div>
-      <span class="hero-cap">Brand &amp; product photography</span>
+    <div class="wrap"><div class="hero-roll reveal" id="heroRoll">
+      <img src="images/hero-1.jpg" alt="Formulation texture" class="active">
+      <img src="images/hero-2.jpg" alt="Product bottles">
+      <img src="images/hero-3.jpg" alt="Serum bottles">
+      <div class="hero-dots">
+        <button class="hd active" aria-label="Slide 1"></button>
+        <button class="hd" aria-label="Slide 2"></button>
+        <button class="hd" aria-label="Slide 3"></button>
+      </div>
     </div></div>
   </section>
 
@@ -353,13 +379,70 @@
         <p class="split-meta ey">OBM Turnkey · Made in Korea</p>
       </div>
       <div class="tlist reveal" id="svcList">
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Product Planning</span><span class="tnum">01</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Formula Development</span><span class="tnum">02</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Design &amp; Packaging</span><span class="tnum">03</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Manufacturing</span><span class="tnum">04</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Quality &amp; Regulatory</span><span class="tnum">05</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Branding &amp; Marketing</span><span class="tnum">06</span></div>
-        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Export Support</span><span class="tnum">07</span></div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Product Planning</span><span class="tnum">01</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>Competitor &amp; market research on concept, channels and comparable price ranges</li>
+            <li>Product planning &amp; concept development</li>
+            <li>Retail price &amp; cost target setting</li>
+            <li>End-to-end launch schedule management</li>
+            <li>Formula sampling &amp; supply meetings with manufacturers</li>
+            <li>Formula improvement requests &amp; R&amp;D coordination</li>
+            <li>Standard-sample receipt &amp; finished-product QC</li>
+        </ul></div></div>
+      </div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Branding</span><span class="tnum">02</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>Full brand direction — naming, catchphrase, copywriting, concept colors, target &amp; lifestyle definition</li>
+        </ul></div></div>
+      </div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Design</span><span class="tnum">03</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>BI / CI design</li>
+            <li>Design branding strategy</li>
+            <li>Design research &amp; planning</li>
+            <li>Package graphic design</li>
+            <li>Container mold design</li>
+            <li>Sourcing of containers, cartons &amp; packaging materials</li>
+            <li>Specialty post-processing spec planning</li>
+        </ul></div></div>
+      </div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Marketing &amp; Contents</span><span class="tnum">04</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>Marketing strategy planning</li>
+            <li>Content planning &amp; production</li>
+            <li>Online content guides incl. detail-page planning</li>
+            <li>Promotion execution</li>
+            <li>Brand collaboration strategy proposals</li>
+        </ul></div></div>
+      </div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Quality Control &amp; SCM</span><span class="tnum">05</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>Copy review per cosmetics labeling &amp; advertising guidelines</li>
+            <li>Manufacturer coordination during production</li>
+            <li>Collection &amp; storage of manufacturer / distributor documents</li>
+            <li>Retention standards for production-control samples</li>
+            <li>MFDS functional reporting &amp; low-irritation testing</li>
+            <li>Human application (clinical) testing</li>
+            <li>China hygiene license (CFDA) acquisition</li>
+            <li>Materials production supervision, cost management &amp; margin review</li>
+        </ul></div></div>
+      </div>
+      <div class="svc-item">
+        <div class="tlist-item svc-head"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Sales Channel Expansion</span><span class="tnum">06</span><span class="svc-plus" aria-hidden="true"></span></div>
+        <div class="svc-detail"><div class="svc-detail-in"><ul>
+            <li>Video ad campaigns via Facebook &amp; Instagram</li>
+            <li>Naver Beauty Window</li>
+            <li>Kakao Makers</li>
+            <li>H&amp;B stores — Lohb&#39;s, Watsons, Olive Young</li>
+            <li>TV home shopping (live &amp; T-commerce)</li>
+            <li>Global e-commerce — Taobao, Qoo10, Amazon</li>
+        </ul></div></div>
+      </div>
       </div>
     </div>
   </section>
@@ -596,6 +679,23 @@
   mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');});});
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.1});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('#svcList .svc-head').forEach(function(head){
+    head.addEventListener('click',function(){
+      var item=head.parentElement,open=item.classList.contains('open');
+      document.querySelectorAll('#svcList .svc-item.open').forEach(function(o){o.classList.remove('open');});
+      if(!open){item.classList.add('open');}
+    });
+  });
+  (function(){
+    var roll=document.getElementById('heroRoll');if(!roll)return;
+    var imgs=roll.querySelectorAll('img'),dots=roll.querySelectorAll('.hd'),i=0,t;
+    function go(n){imgs[i].classList.remove('active');dots[i].classList.remove('active');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('active');dots[i].classList.add('active');}
+    function start(){t=setInterval(function(){go(i+1);},4500);}
+    function stop(){clearInterval(t);}
+    dots.forEach(function(d,idx){d.addEventListener('click',function(){stop();go(idx);start();});});
+    roll.addEventListener('mouseenter',stop);roll.addEventListener('mouseleave',start);
+    start();
+  })();
 </script>
 </body>
 </html>
