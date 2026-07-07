@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONYOU — Korean Cosmetics Manufacturing Partner</title>
+<link rel="icon" type="image/png" href="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png">
+<link rel="apple-touch-icon" href="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png">
+<meta name="description" content="ONYOU delivers full OBM turnkey cosmetics manufacturing for global beauty brands — from planning and formulation to production and export, built on Korea's proven expertise." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f0ede5;
+    --cream-2:#e8e4da;
+    --black:#0b0b0b;
+    --ink:#111110;
+    --white:#f2f1ee;
+    --orange:#e8743b;
+    --mut-cream:#6c6a63;
+    --mut-black:#8d8b85;
+    --line-c:rgba(17,17,16,.18);
+    --line-b:rgba(242,241,238,.2);
+    --font:'Archivo',Helvetica,Arial,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --maxw:1440px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 44px}
+  .giant{font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-.015em;font-size:clamp(44px,8.5vw,150px)}
+  .giant .sp{display:inline-block;width:.5em}
+  .ey{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+  .ey::before{content:"";display:inline-block;width:6px;height:6px;background:var(--orange);border-radius:50%;margin-right:11px;vertical-align:2px}
+  .sec{padding:110px 0}
+  .cream{background:var(--cream);color:var(--ink)}
+  .black{background:var(--black);color:var(--white)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--line-c);transition:transform .35s var(--ease)}
+  header.hide{transform:translateY(-100%)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;position:relative}
+  .nav-l,.nav-r{display:flex;gap:40px}
+  .nav a{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .2s}
+  .nav a:hover{opacity:1}
+  .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:800;font-size:20px;letter-spacing:.06em;line-height:.95;text-align:center}
+  .brand-logo{height:26px;width:auto;display:block}
+  .brand-text{display:none}
+  .foot-logo-img{height:72px;width:auto;display:block;margin-bottom:14px}
+  .ci-mark-img{width:96px;height:auto;display:block}
+  .brand small{display:block;font-size:9px;letter-spacing:.2em;font-weight:500;opacity:.6;margin-top:2px}
+  .lang{font-size:12px;letter-spacing:.1em;opacity:.6}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;position:absolute;right:0;top:50%;transform:translateY(-50%)}
+  .burger span{width:24px;height:1.6px;background:var(--ink)}
+  .mobile-menu{display:none;flex-direction:column;background:var(--cream);border-top:1px solid var(--line-c);padding:12px 44px 22px}
+  .mobile-menu a{padding:13px 0;font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--line-c)}
+  .mobile-menu a:last-child{border-bottom:0}
+
+  /* Hero */
+  .hero{padding:128px 0 0}
+  .hero .giant{text-align:center}
+  .hero-sub{max-width:640px;margin:26px auto 0;text-align:center;font-size:17px;color:var(--mut-cream);line-height:1.7}
+  .hero-img{margin-top:56px;height:clamp(300px,42vw,560px);background:var(--cream-2);position:relative;overflow:hidden}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#b6b1a4}
+  .hero-ph svg{width:78px;opacity:.5;fill:currentColor}
+  .hero-cap{position:absolute;bottom:16px;left:20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8f8a7c}
+
+  /* Thin-line list w/ hover arrow */
+  .split{display:grid;grid-template-columns:1fr 1.05fr;gap:64px}
+  .split-left{max-width:520px}
+  .split-desc{margin-top:28px;font-size:15.5px;line-height:1.75;max-width:440px}
+  .black .split-desc{color:#cbcac5}
+  .cream .split-desc{color:#4a4842}
+  .split-meta{margin-top:38px}
+  .black .split-meta{color:var(--mut-black)}
+  .cream .split-meta{color:var(--mut-cream)}
+  .tlist{align-self:center}
+  .tlist-item{display:flex;align-items:center;padding:28px 4px;cursor:pointer;position:relative;transition:padding-left .35s var(--ease)}
+  .black .tlist-item{border-top:1px solid var(--line-b)}
+  .cream .tlist-item{border-top:1px solid var(--line-c)}
+  .tlist-item:last-child{border-bottom:1px solid transparent}
+  .black .tlist-item:last-child{border-bottom-color:var(--line-b)}
+  .cream .tlist-item:last-child{border-bottom-color:var(--line-c)}
+  .tlist-item:hover{padding-left:12px}
+  .arrow{width:0;overflow:hidden;opacity:0;transition:width .4s var(--ease),opacity .3s;flex-shrink:0}
+  .tlist-item:hover .arrow{width:76px;opacity:1}
+  .arrow svg{width:64px;height:20px}
+  .arrow line,.arrow path{stroke:var(--orange);stroke-width:1.5;fill:none}
+  .tlabel{font-weight:400;font-size:clamp(21px,2.9vw,38px);letter-spacing:.005em;text-transform:uppercase;white-space:nowrap;transition:transform .35s var(--ease)}
+  @media(hover:hover){.tlist-item:hover .tlabel{transform:translateX(6px)}}
+  .tnum{margin-left:auto;font-size:12px;letter-spacing:.1em;padding-left:20px}
+  .black .tnum{color:var(--mut-black)}
+  .cream .tnum{color:var(--mut-cream)}
+
+  /* Feature (OBM) — image left, text right */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .feat-img{aspect-ratio:4/5;background:var(--cream-2);position:relative;overflow:hidden}
+  .feat-img img{width:100%;height:100%;object-fit:cover}
+  .feat h2{font-weight:700;text-transform:uppercase;font-size:clamp(32px,4.6vw,64px);line-height:.98;letter-spacing:-.01em}
+  .feat p{margin-top:24px;font-size:16px;line-height:1.8;color:var(--mut-cream);max-width:460px}
+  .feat .more{display:inline-block;margin-top:30px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--orange);padding-bottom:4px}
+
+  /* Vision / values */
+  .vision-statement{font-weight:700;text-transform:uppercase;font-size:clamp(34px,5vw,74px);line-height:.98;letter-spacing:-.01em}
+  .vision-sub{margin-top:20px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut-black)}
+  .vision-lead{font-size:17px;line-height:1.8;color:#cbcac5;max-width:460px}
+
+  /* CI */
+  .ci-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .ci-quote{font-weight:700;text-transform:uppercase;font-size:clamp(30px,4.4vw,60px);line-height:.98;letter-spacing:-.01em;margin:18px 0 26px}
+  .ci p{font-size:16px;line-height:1.8;color:var(--mut-cream);max-width:460px}
+  .ci-keywords{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+  .ci-keywords span{border:1px solid var(--line-c);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px}
+  .ci-symbol{display:flex;flex-direction:column;align-items:center;gap:36px}
+  .ci-mark{width:190px;height:190px;border:1px solid var(--line-c);display:flex;align-items:center;justify-content:center}
+  .ci-mark svg{width:88px;fill:var(--ink)}
+  .ci-colors{display:flex;gap:28px}
+  .ci-color{text-align:center}
+  .ci-swatch{width:52px;height:52px;margin:0 auto 10px}
+  .ci-color .nm{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .ci-color .pn{font-size:10.5px;color:var(--mut-cream);margin-top:3px;letter-spacing:.04em}
+
+  /* CEO */
+  .ceo-grid{display:grid;grid-template-columns:400px 1fr;gap:60px;align-items:start;margin-top:48px}
+  .ceo-photo{aspect-ratio:3/3.7;background:#1a1a1a;position:relative;overflow:hidden}
+  .ceo-photo img{width:100%;height:100%;object-fit:cover}
+  .ceo-photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#4a4a48;gap:12px}
+  .ceo-photo .ph svg{width:50px;fill:currentColor;opacity:.6}
+  .ceo-role{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--mut-black)}
+  .ceo-name{font-weight:700;text-transform:uppercase;font-size:34px;letter-spacing:-.01em;margin:6px 0 20px}
+  .ceo-bio p{font-size:15.5px;color:#cbcac5;margin-bottom:14px;line-height:1.75}
+  .ceo-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:34px;padding-top:32px;border-top:1px solid var(--line-b)}
+  .ceo-cols h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-black);margin-bottom:16px;font-weight:600}
+  .ceo-cols ul{list-style:none}
+  .ceo-cols li{font-size:14px;color:#cbcac5;padding:7px 0 7px 18px;position:relative;line-height:1.5}
+  .ceo-cols li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;background:var(--white)}
+
+  /* Portfolio */
+  .pf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px}
+  .pf-carousel{position:relative}
+  .pf-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 75px)/6);gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 14px;scrollbar-width:none;-ms-overflow-style:none}
+  .pf-track::-webkit-scrollbar{display:none}
+  .brand-card{scroll-snap-align:start;cursor:pointer;display:flex;flex-direction:column;gap:12px}
+  .brand-thumb{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--cream-2);transition:.3s var(--ease)}
+  .brand-card:hover .brand-thumb{transform:translateY(-4px)}
+  .brand-thumb img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s,transform .5s var(--ease)}
+  .brand-thumb img.loaded{opacity:1}
+  .brand-card:hover .brand-thumb img.loaded{transform:scale(1.05)}
+  .brand-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+  .brand-ph svg{width:24px;opacity:.35;fill:#b6b1a4}
+  .brand-ph b{font-size:12px;font-weight:600;color:#b6b1a4}
+  .brand-count{position:absolute;top:10px;right:10px;background:var(--ink);color:var(--cream);font-size:11px;font-weight:600;padding:4px 9px}
+  .brand-name{font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+  .pf-arrow{position:absolute;top:36%;width:46px;height:46px;border-radius:50%;background:var(--cream);border:1px solid var(--line-c);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}
+  .pf-arrow:hover{background:var(--ink)}
+  .pf-arrow:hover svg{stroke:var(--cream)}
+  .pf-arrow svg{width:20px;stroke:var(--ink);fill:none;stroke-width:2}
+  .pf-arrow.prev{left:-18px}.pf-arrow.next{right:-18px}
+  .pf-arrow.disabled{opacity:.3;pointer-events:none}
+  .pf-hint{text-align:center;font-size:12px;letter-spacing:.06em;color:var(--mut-cream);margin-top:12px;text-transform:uppercase}
+  .pf-showall{display:none;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--line-c);padding:13px 26px;margin:24px auto 0;cursor:pointer}
+  .pf-showall.hidden{display:none!important}
+
+  /* Brand modal + lightbox */
+  .bm{position:fixed;inset:0;background:rgba(11,11,11,.7);z-index:180;display:none;align-items:center;justify-content:center;padding:30px}
+  .bm.open{display:flex}
+  .bm-panel{background:var(--cream);width:min(980px,94vw);max-height:88vh;overflow:auto;padding:36px}
+  .bm-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:26px}
+  .bm-head h3{font-weight:700;text-transform:uppercase;font-size:28px;letter-spacing:-.01em}
+  .bm-close{width:42px;height:42px;border:1px solid var(--line-c);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .bm-close svg{width:20px;stroke:var(--ink);fill:none;stroke-width:2}
+  .bm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .bm-img{aspect-ratio:3/4;overflow:hidden;background:var(--cream-2);cursor:pointer;position:relative}
+  .bm-img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s,transform .4s var(--ease)}
+  .bm-img img.loaded{opacity:1}
+  .bm-img:hover img.loaded{transform:scale(1.05)}
+  .lb{position:fixed;inset:0;background:rgba(6,6,6,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:30px}
+  .lb.open{display:flex}
+  .lb img{max-width:88vw;max-height:84vh}
+  .lb-close,.lb-nav{position:absolute;background:rgba(242,241,238,.1);border:1px solid rgba(242,241,238,.22);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .lb-close{top:26px;right:26px}.lb-prev{left:26px;top:50%;transform:translateY(-50%)}.lb-next{right:26px;top:50%;transform:translateY(-50%)}
+  .lb-close svg,.lb-nav svg{width:22px;stroke:#fff;fill:none;stroke-width:2}
+  .lb-count{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#cbcac5;font-size:13px;letter-spacing:.06em}
+
+  /* Contact */
+  .ct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;margin-top:48px}
+  .ct-lead{color:var(--mut-black);font-size:17px;line-height:1.7;margin-bottom:30px}
+  .ct-info{display:flex;flex-direction:column;gap:16px;font-size:15px}
+  .ct-info .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-black)}
+  .ct-info .val{color:var(--white);margin-top:2px}
+  .ct-form .field{margin-bottom:16px}
+  .ct-form label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-black);margin-bottom:7px}
+  .ct-form input,.ct-form select,.ct-form textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-b);padding:10px 0;font-family:var(--font);font-size:15px;color:var(--white);transition:.2s}
+  .ct-form input:focus,.ct-form select:focus,.ct-form textarea:focus{outline:none;border-bottom-color:var(--white)}
+  .ct-form select option{background:var(--black)}
+  .ct-form textarea{resize:vertical;min-height:90px}
+  .ct-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .ct-submit{margin-top:22px;background:var(--white);color:var(--black);border:0;font-family:var(--font);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:16px 34px;cursor:pointer;transition:.2s}
+  .ct-submit:hover{opacity:.85}
+
+  /* Footer */
+  footer{background:var(--black);color:var(--mut-black);padding:70px 0 34px;border-top:1px solid var(--line-b)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px}
+  .foot-logo{font-weight:800;font-size:22px;letter-spacing:.06em;color:var(--white);margin-bottom:14px}
+  .foot-col h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:14px}
+  .foot-col a,.foot-col p{display:block;font-size:13px;color:var(--mut-black);margin-bottom:8px;transition:.2s}
+  .foot-col a:hover{color:var(--white)}
+  .foot-bottom{padding-top:24px;border-top:1px solid var(--line-b);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;letter-spacing:.04em}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .totop{position:fixed;bottom:26px;right:26px;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--orange);background:var(--cream);color:var(--orange);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,background .2s,color .2s;z-index:90}
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop:hover{background:var(--orange);color:var(--cream)}
+  .totop svg{width:20px;stroke:currentColor;fill:none;stroke-width:2}
+
+  @media(max-width:1000px){
+    .pf-track{grid-auto-columns:calc((100% - 45px)/4)}
+    .bm-grid{grid-template-columns:repeat(3,1fr)}
+    .ceo-grid{grid-template-columns:320px 1fr;gap:44px}
+  }
+  @media(max-width:880px){
+    .wrap{padding:0 26px}
+    .nav-l,.nav-r{display:none}
+    .burger{display:flex}
+    .mobile-menu.open{display:flex}
+    .split,.feat,.ci-grid,.ct-grid{grid-template-columns:1fr;gap:40px}
+    .ceo-grid{grid-template-columns:1fr;gap:34px}
+    .ceo-photo{max-width:340px}
+    .ceo-cols{grid-template-columns:1fr;gap:26px}
+    .pf-arrow{display:none}
+    .arrow{display:none}
+    .tlist-item:hover{padding-left:4px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .sec{padding:76px 0}
+    .hero{padding:104px 0 0}
+  }
+  @media(max-width:768px){
+    .pf-track{grid-auto-flow:row;grid-template-columns:1fr 1fr;overflow:visible;scroll-snap-type:none;gap:14px;padding:4px 0}
+    .pf-track .brand-card:nth-child(n+7){display:none}
+    .pf-track.expanded .brand-card:nth-child(n+7){display:flex}
+    .pf-hint{display:none}
+    .pf-showall{display:flex;align-items:center;justify-content:center;width:fit-content}
+  }
+  @media(max-width:520px){
+    .bm-grid{grid-template-columns:repeat(2,1fr)}
+    .ct-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none"><symbol id="ppl" viewBox="0 0 64 64"><circle cx="23" cy="16" r="8"/><path d="M11 56 V40 a12 12 0 0 1 24 0 V56 Z"/><circle cx="44" cy="13" r="7" opacity=".55"/><path d="M34 56 V38 a10 10 0 0 1 20 0 V56 Z" opacity=".55"/></symbol></svg>
+
+<header id="header">
+  <div class="wrap nav">
+    <div class="nav-l">
+      <a href="#business">Business</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+    </div>
+    <a href="#top" class="brand">
+      <img class="brand-logo" src="images/logo/ONYOU-LOGO-05-SB-TEXT-H-GREY.png" alt="ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="brand-text">ONYOU<small>Cosmetics Manufacturing</small></span>
+    </a>
+    <div class="nav-r">
+      <a href="#contact">Contact</a>
+      <a href="https://www.onyoucompany.co.kr" class="lang">KO</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#business">Business</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.onyoucompany.co.kr">한국어 사이트</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero cream">
+    <div class="wrap">
+      <h1 class="giant reveal">Cosmetics<br>made in Korea</h1>
+      <p class="hero-sub reveal">Full OBM turnkey manufacturing for global beauty brands — from planning and formulation to production and export, built on two decades of Korean cosmetics expertise.</p>
+    </div>
+    <div class="wrap"><div class="hero-img reveal">
+      <img src="images/hero.jpg" alt="ONYOU cosmetics manufacturing" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="hero-ph" style="display:none"><svg viewBox="0 0 64 64"><use href="#ppl"/></svg></div>
+      <span class="hero-cap">Brand &amp; product photography</span>
+    </div></div>
+  </section>
+
+  <!-- SERVICES (black) -->
+  <section class="sec black" id="business">
+    <div class="wrap split">
+      <div class="split-left reveal">
+        <h2 class="giant" style="font-size:clamp(40px,5.6vw,88px)">Our<span class="sp"></span>Services</h2>
+        <p class="split-desc">With full OBM turnkey management, ONYOU tailors every service to your brand — handling the entire process from concept to finished product. We turn your idea into a market-ready product while you focus on building your brand.</p>
+        <p class="split-meta ey">OBM Turnkey · Made in Korea</p>
+      </div>
+      <div class="tlist reveal" id="svcList">
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Product Planning</span><span class="tnum">01</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Formula Development</span><span class="tnum">02</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Design &amp; Packaging</span><span class="tnum">03</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Manufacturing</span><span class="tnum">04</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Quality &amp; Regulatory</span><span class="tnum">05</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Branding &amp; Marketing</span><span class="tnum">06</span></div>
+        <div class="tlist-item"><span class="arrow"><svg viewBox="0 0 64 20"><line x1="0" y1="10" x2="58" y2="10"/><path d="M50 3 L60 10 L50 17"/></svg></span><span class="tlabel">Export Support</span><span class="tnum">07</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBM FEATURE (cream) -->
+  <section class="sec cream">
+    <div class="wrap feat">
+      <div class="feat-img reveal">
+        <img src="images/obm.jpg" alt="OBM turnkey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="hero-ph" style="display:none"><svg viewBox="0 0 64 64"><use href="#ppl"/></svg></div>
+      </div>
+      <div class="reveal">
+        <span class="ey">Business</span>
+        <h2 style="margin-top:14px">OBM Turnkey<br>Manufacturing</h2>
+        <p>We take your brand from concept to finished product under one roof. ONYOU manages every stage — planning, formulation, design, production, and quality — so you can launch with confidence and reach global markets. Backed by trusted partner facilities and 20+ years of expertise.</p>
+        <a href="#contact" class="more">Start your brand</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / VISION + VALUES (black) -->
+  <section class="sec black" id="about">
+    <div class="wrap split" style="align-items:center">
+      <div class="split-left reveal">
+        <span class="ey" style="color:var(--mut-black)">Company · Vision</span>
+        <div class="vision-statement" style="margin-top:18px">Beauty<br>Trend<br>Leader</div>
+        <div class="vision-sub">Global Beauty Solution Provider</div>
+        <p class="vision-lead" style="margin-top:26px">ONYOU is a comprehensive cosmetics solution provider — combining deep industry experience with the latest beauty trends, technologies, and market insight.</p>
+      </div>
+      <div class="tlist reveal">
+        <div class="tlist-item"><span class="tlabel">Expert</span><span class="tnum">01</span></div>
+        <div class="tlist-item"><span class="tlabel">Success</span><span class="tnum">02</span></div>
+        <div class="tlist-item"><span class="tlabel">Trust</span><span class="tnum">03</span></div>
+        <div class="tlist-item"><span class="tlabel">Strategic Guidance</span><span class="tnum">04</span></div>
+        <div class="tlist-item"><span class="tlabel">Reasonable</span><span class="tnum">05</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CI (cream) -->
+  <section class="sec cream">
+    <div class="wrap ci-grid">
+      <div class="reveal">
+        <span class="ey">Brand Identity</span>
+        <div class="ci-quote">Everything<br>starts with<br>people</div>
+        <p>The combination of ONYOU's wordmark and symbol reflects our commitment to our core values while expressing warmth, balance, and thoughtful consideration. The image of people coming together represents the spirit and identity of ONYOU.</p>
+        <div class="ci-keywords"><span>Beauty</span><span>Client</span><span>Communication</span><span>Company</span></div>
+      </div>
+      <div class="ci-symbol reveal">
+        <div class="ci-mark">
+          <img class="ci-mark-img" src="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png" alt="ONYOU symbol" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
+        </div>
+        <div class="ci-colors">
+          <div class="ci-color"><div class="ci-swatch" style="background:#141414"></div><div class="nm">Black</div><div class="pn">Pantone Black C</div></div>
+          <div class="ci-color"><div class="ci-swatch" style="background:#e8743b"></div><div class="nm">Orange</div><div class="pn">Pantone 165C</div></div>
+          <div class="ci-color"><div class="ci-swatch" style="background:#a7a9ac"></div><div class="nm">Gray</div><div class="pn">Cool Gray 4C</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO (black) -->
+  <section class="sec black">
+    <div class="wrap">
+      <h2 class="giant reveal" style="font-size:clamp(40px,6vw,104px)">Meet the<span class="sp"></span>Founder</h2>
+      <div class="ceo-grid">
+        <div class="ceo-photo reveal">
+          <img src="images/ceo.jpg" alt="Wool Hong, Founder & CEO of ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="ph" style="display:none"><svg viewBox="0 0 64 64"><use href="#ppl"/></svg><span style="font-size:12px">images/ceo.jpg</span></div>
+        </div>
+        <div class="reveal">
+          <div class="ceo-role">CEO · Founder</div>
+          <div class="ceo-name">Wool Hong</div>
+          <div class="ceo-bio">
+            <p>With over 20 years of experience in the cosmetics industry, Wool Hong has successfully led numerous brand development, product launch, and commercialization projects.</p>
+            <p>Drawing on extensive expertise in marketing, product planning, product development, and brand management, she has built a strong track record across leading beauty companies, manufacturers, and R&amp;D organizations.</p>
+            <p>As the Founder &amp; CEO of ONYOU Co., Ltd., she provides professional consulting and strategic guidance in cosmetics product development, brand building, manufacturing, and business growth.</p>
+          </div>
+          <div class="ceo-cols">
+            <div>
+              <h4>Professional Experience</h4>
+              <ul>
+                <li>Marketing Team, Korea Yakult</li>
+                <li>Marketing &amp; Product Planning, Daemyung I&amp;S</li>
+                <li>Product Planning, LG Household &amp; Health Care</li>
+                <li>Product Planning, Bandi Nail &amp; Color Cosmetics</li>
+                <li>Product Planning, Plus Cream</li>
+                <li>Head of Product Development, Design &amp; Quality, CELAB R&amp;D Center</li>
+                <li>Founder &amp; CEO, ONYOU Co., Ltd. (2019–Present)</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Professional Activities</h4>
+              <ul>
+                <li>Director, Cosmetics BM Academy</li>
+                <li>Product Development &amp; Brand Strategy Consultant</li>
+                <li>Manufacturing &amp; Quality Management Instructor</li>
+                <li>Startup &amp; Entrepreneurship Mentor</li>
+                <li>Beauty Industry Consultant</li>
+                <li>Brand Development Advisor</li>
+                <li>Speaker at Beauty Industry Seminars</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (cream) -->
+  <section class="sec cream" id="portfolio">
+    <div class="wrap">
+      <div class="pf-head reveal">
+        <h2 class="giant" style="font-size:clamp(40px,6vw,104px)">Our<span class="sp"></span>Brands</h2>
+        <p style="max-width:320px;color:var(--mut-cream);font-size:14px;text-transform:uppercase;letter-spacing:.04em">41 brands developed and manufactured with ONYOU. Select a brand to view its products.</p>
+      </div>
+      <div class="pf-carousel reveal">
+        <button class="pf-arrow prev" id="pfPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div class="pf-track" id="pfTrack"></div>
+        <button class="pf-arrow next" id="pfNext" aria-label="More"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <p class="pf-hint">Swipe or use the arrows · Click a brand to view its products</p>
+      <button class="pf-showall" id="pfShowAll">Show all 41 brands</button>
+    </div>
+  </section>
+
+  <!-- CONTACT (black) -->
+  <section class="sec black" id="contact">
+    <div class="wrap">
+      <h2 class="giant reveal" style="font-size:clamp(40px,6vw,104px)">Contact<span class="sp"></span>Us</h2>
+      <div class="ct-grid">
+        <div class="reveal">
+          <p class="ct-lead">Tell us about your product idea or manufacturing needs. Our team will get back to you with the right solution.</p>
+          <div class="ct-info">
+            <div><div class="lbl">Email</div><div class="val">contact@onyoucompany.co.kr</div></div>
+            <div><div class="lbl">Location</div><div class="val">Seoul, Republic of Korea</div></div>
+            <div><div class="lbl">Website</div><div class="val">www.onyoucompany.co.kr</div></div>
+          </div>
+        </div>
+        <form class="ct-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="ct-row">
+            <div class="field"><label>Name</label><input type="text" name="name" required></div>
+            <div class="field"><label>Company</label><input type="text" name="company"></div>
+          </div>
+          <div class="ct-row">
+            <div class="field"><label>Email</label><input type="email" name="email" required></div>
+            <div class="field"><label>Country</label><input type="text" name="country"></div>
+          </div>
+          <div class="field"><label>Inquiry type</label>
+            <select name="inquiry_type"><option>OBM Turnkey Manufacturing</option><option>Product Development</option><option>Brand Consulting</option><option>Other</option></select>
+          </div>
+          <div class="field"><label>Message</label><textarea name="message" required></textarea></div>
+          <button type="submit" class="ct-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo-img" src="images/logo/ONYOU-LOGO-09-SB-TEXT-V-WHITE.png" alt="ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <div class="foot-logo" style="display:none">ONYOU</div>
+        <p style="font-size:13px;max-width:280px;color:var(--mut-black)">Global Beauty Solution Provider — OBM turnkey cosmetics manufacturing from Korea.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#about">About</a><a href="#business">Business</a><a href="#portfolio">Portfolio</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <p>Seoul, Republic of Korea</p><p>contact@onyoucompany.co.kr</p><a href="https://www.onyoucompany.co.kr">한국어 사이트</a>
+      </div>
+      <div class="foot-col">
+        <h5>Identity</h5>
+        <p>Beauty</p><p>Client</p><p>Communication</p><p>Company</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 ONYOU Co., Ltd. All rights reserved.</span>
+      <span>Cosmetics manufactured in Korea</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bm" id="bm">
+  <div class="bm-panel">
+    <div class="bm-head"><h3 id="bmTitle">Brand</h3><button class="bm-close" id="bmClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="bm-grid" id="bmGrid"></div>
+  </div>
+</div>
+
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-nav lb-prev" id="lbPrev"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<button class="totop" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+  var BRANDS=[];for(var k=1;k<=41;k++){BRANDS.push({name:"Brand "+('0'+k).slice(-2),imgs:[4,3,5][k%3]});}
+  // EDIT: replace names/counts. Folder: images/portfolio/b01/1.jpg ... (1.jpg = cover)
+  var PH='<svg viewBox="0 0 24 24" fill="none" stroke="#b6b1a4" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
+  var track=document.getElementById('pfTrack');
+  BRANDS.forEach(function(b,idx){
+    b.id='b'+('0'+(idx+1)).slice(-2);
+    var card=document.createElement('div');card.className='brand-card';card.dataset.index=idx;
+    card.innerHTML='<div class="brand-thumb"><div class="brand-ph">'+PH+'<b>'+b.id+'</b></div>'+
+      '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\')" onerror="this.remove()">'+
+      '<span class="brand-count">'+b.imgs+'</span></div><div class="brand-name">'+b.name+'</div>';
+    track.appendChild(card);
+  });
+  var pfPrev=document.getElementById('pfPrev'),pfNext=document.getElementById('pfNext');
+  function pw(){return track.clientWidth*0.86;}
+  pfPrev.onclick=function(){track.scrollBy({left:-pw(),behavior:'smooth'});};
+  pfNext.onclick=function(){track.scrollBy({left:pw(),behavior:'smooth'});};
+  function upd(){pfPrev.classList.toggle('disabled',track.scrollLeft<10);pfNext.classList.toggle('disabled',track.scrollLeft+track.clientWidth>=track.scrollWidth-10);}
+  track.addEventListener('scroll',upd);window.addEventListener('resize',upd);setTimeout(upd,120);
+  var sa=document.getElementById('pfShowAll');if(sa){sa.addEventListener('click',function(){track.classList.add('expanded');sa.classList.add('hidden');});}
+
+  var bm=document.getElementById('bm'),bmT=document.getElementById('bmTitle'),bmG=document.getElementById('bmGrid'),cur=[];
+  track.addEventListener('click',function(e){var c=e.target.closest('.brand-card');if(c)openBrand(+c.dataset.index);});
+  function openBrand(i){var b=BRANDS[i];bmT.textContent=b.name;bmG.innerHTML='';cur=[];
+    for(var j=1;j<=b.imgs;j++){var s='images/portfolio/'+b.id+'/'+j+'.jpg';cur.push(s);
+      var d=document.createElement('div');d.className='bm-img';d.dataset.i=j-1;
+      d.innerHTML='<div class="brand-ph">'+PH+'<b>'+j+'</b></div><img loading="lazy" src="'+s+'" onload="this.classList.add(\'loaded\')" onerror="this.remove()">';bmG.appendChild(d);}
+    bm.classList.add('open');document.body.style.overflow='hidden';}
+  function closeBrand(){bm.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('bmClose').onclick=closeBrand;bm.addEventListener('click',function(e){if(e.target===bm)closeBrand();});
+  bmG.addEventListener('click',function(e){var c=e.target.closest('.bm-img');if(c)openLb(cur,+c.dataset.i);});
+
+  var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCount'),L=[],ci=0;
+  function openLb(a,i){L=a;ci=i;li.src=a[i];lc.textContent=(i+1)+' / '+a.length;lb.classList.add('open');document.body.style.overflow='hidden';}
+  function closeLb(){lb.classList.remove('open');if(!bm.classList.contains('open'))document.body.style.overflow='';}
+  function stp(d){if(!L.length)return;ci=(ci+d+L.length)%L.length;li.src=L[ci];lc.textContent=(ci+1)+' / '+L.length;}
+  document.getElementById('lbClose').onclick=closeLb;document.getElementById('lbPrev').onclick=function(){stp(-1)};document.getElementById('lbNext').onclick=function(){stp(1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(lb.classList.contains('open')){if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')stp(-1);if(e.key==='ArrowRight')stp(1);return;}if(bm.classList.contains('open')&&e.key==='Escape')closeBrand();});
+
+  var header=document.getElementById('header'),last=0;
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){var y=window.scrollY;header.classList.toggle('hide',y>last&&y>200);last=y;toTop.classList.toggle('show',y>600);});
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var bg=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+  bg.addEventListener('click',function(){mm.classList.toggle('open');});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
