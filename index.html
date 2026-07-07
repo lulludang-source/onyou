@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#f0ede5;
-    --cream-2:#e8e4da;
+    --cream:#f6f3eb;
+    --cream-2:#f1ede5;
     --black:#0b0b0b;
     --ink:#111110;
     --white:#f2f1ee;
@@ -39,6 +39,27 @@
   .sec{padding:110px 0}
   .cream{background:var(--cream);color:var(--ink)}
   .black{background:var(--black);color:var(--white)}
+
+  /* About Us */
+  .about-sec{background:var(--cream);color:var(--ink)}
+  .about-body{display:flex;justify-content:flex-end;margin-top:54px}
+  .about-body-in{max-width:560px}
+  .about-vision-line{font-size:clamp(28px,3.8vw,52px);font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:-.01em;color:var(--ink)}
+  .about-sub{margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  .about-sub::before{content:"";display:inline-block;width:26px;height:1px;background:var(--orange);margin-right:14px;vertical-align:middle}
+  .about-lead{margin-top:16px;font-size:16px;line-height:1.85;color:var(--mut-cream)}
+  .about-values{display:grid;grid-template-columns:repeat(5,1fr);margin-top:84px;border-top:1px solid var(--ink)}
+  .av-item{padding:26px 22px 0 0;border-right:1px solid var(--line-c)}
+  .av-item:last-child{border-right:none;padding-right:0}
+  .av-num{display:block;font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+  .av-name{display:block;margin-top:14px;font-size:14px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--mut-cream);line-height:1.3}
+  @media(max-width:860px){
+    .about-body{justify-content:flex-start}
+    .about-values{grid-template-columns:repeat(2,1fr);border-top:none;margin-top:56px}
+    .av-item{padding:22px 16px 22px 0;border-right:none;border-top:1px solid var(--line-c)}
+    .av-item:last-child{border-top:1px solid var(--line-c)}
+  }
+  @media(max-width:480px){.about-values{grid-template-columns:1fr}}
 
   /* Header */
   header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--line-c);transition:transform .35s var(--ease)}
@@ -300,6 +321,29 @@
     </div></div>
   </section>
 
+  <!-- ABOUT US (cream-2) -->
+  <section class="sec about-sec" id="about">
+    <div class="wrap">
+      <div class="about-head reveal">
+        <h2 class="giant" style="font-size:clamp(40px,6vw,104px)">About<span class="sp"></span>Us</h2>
+      </div>
+      <div class="about-body reveal">
+        <div class="about-body-in">
+          <h3 class="about-vision-line">Beauty Trend Leader</h3>
+          <p class="about-sub">Global Beauty Solution Provider</p>
+          <p class="about-lead">ONYOU is a comprehensive cosmetics solution provider — combining deep industry experience with the latest beauty trends, technologies, and market insight to guide every brand we work with.</p>
+        </div>
+      </div>
+      <div class="about-values reveal">
+        <div class="av-item"><span class="av-num">01</span><span class="av-name">Expert</span></div>
+        <div class="av-item"><span class="av-num">02</span><span class="av-name">Success</span></div>
+        <div class="av-item"><span class="av-num">03</span><span class="av-name">Trust</span></div>
+        <div class="av-item"><span class="av-num">04</span><span class="av-name">Strategic Guidance</span></div>
+        <div class="av-item"><span class="av-num">05</span><span class="av-name">Reasonable</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES (black) -->
   <section class="sec black" id="business">
     <div class="wrap split">
@@ -380,25 +424,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT / VISION + VALUES (black) -->
-  <section class="sec black" id="about">
-    <div class="wrap split" style="align-items:center">
-      <div class="split-left reveal">
-        <span class="ey" style="color:var(--mut-black)">Company · Vision</span>
-        <div class="vision-statement" style="margin-top:18px">Beauty<br>Trend<br>Leader</div>
-        <div class="vision-sub">Global Beauty Solution Provider</div>
-        <p class="vision-lead" style="margin-top:26px">ONYOU is a comprehensive cosmetics solution provider — combining deep industry experience with the latest beauty trends, technologies, and market insight.</p>
-      </div>
-      <div class="tlist reveal">
-        <div class="tlist-item"><span class="tlabel">Expert</span><span class="tnum">01</span></div>
-        <div class="tlist-item"><span class="tlabel">Success</span><span class="tnum">02</span></div>
-        <div class="tlist-item"><span class="tlabel">Trust</span><span class="tnum">03</span></div>
-        <div class="tlist-item"><span class="tlabel">Strategic Guidance</span><span class="tnum">04</span></div>
-        <div class="tlist-item"><span class="tlabel">Reasonable</span><span class="tnum">05</span></div>
       </div>
     </div>
   </section>
