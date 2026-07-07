@@ -154,13 +154,17 @@
 
   /* Business full-bleed feature */
   .business-feat{position:relative;background:#efeae1;text-align:center;padding:clamp(96px,15vw,168px) 0;overflow:hidden}
-  .business-feat::before{content:"";position:absolute;inset:0;background:url('images/business-bg.jpg') center/cover no-repeat;z-index:0}
+  .business-feat::before{content:"";position:absolute;inset:0;background:url('images/business-bg.jpg') center 72%/cover no-repeat;z-index:0}
   .business-feat::after{content:"";position:absolute;inset:0;background:rgba(246,243,235,.3);z-index:1}
-  .bf-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;display:flex;flex-direction:column;align-items:center;color:var(--ink)}
+  .bf-inner{position:relative;z-index:2;max-width:none;margin:0 auto;display:flex;flex-direction:column;align-items:center;color:var(--ink)}
   .bf-inner .ey{color:var(--mut-cream)}
-  .bf-inner h2{margin-top:16px}
-  .bf-inner p{margin-top:22px;font-size:16px;line-height:1.85;color:#5a574f;max-width:520px}
-  .bf-more{display:inline-block;margin-top:32px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--orange);padding-bottom:4px;color:var(--ink)}
+  .bf-head{display:inline-flex;flex-direction:column;align-items:flex-start;max-width:100%}
+  .bf-inner h2{margin-top:14px;line-height:1.02}
+  .bf-sub{margin-top:11px;font-size:clamp(16px,1.9vw,21px);line-height:1.6;color:var(--ink);max-width:660px}
+  .bf-cols{margin-top:46px;display:grid;grid-template-columns:1fr 1fr;gap:52px;max-width:720px;text-align:left}
+  .bf-cols p{font-size:15px;line-height:1.85;color:#5a574f}
+  .bf-more{display:inline-block;margin-top:46px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--orange);padding-bottom:4px;color:var(--ink)}
+  @media(max-width:640px){.bf-cols{grid-template-columns:1fr;gap:22px;max-width:440px}}
 
   /* Vision / values */
   .vision-statement{font-weight:700;text-transform:uppercase;font-size:clamp(34px,5vw,74px);line-height:.98;letter-spacing:-.01em}
@@ -472,9 +476,15 @@
   <section class="sec business-feat" id="business">
     <div class="wrap">
       <div class="bf-inner reveal">
-        <span class="ey">Business</span>
-        <h2>OBM Turnkey<br>Manufacturing</h2>
-        <p>We take your brand from concept to finished product under one roof. ONYOU manages every stage — planning, formulation, design, production, and quality — so you can launch with confidence and reach global markets. Backed by trusted partner facilities and 20+ years of expertise.</p>
+        <div class="bf-head">
+          <span class="ey">Business</span>
+          <h2 class="giant" style="font-size:clamp(26px,5vw,80px)">OBM Turnkey Manufacturing</h2>
+        </div>
+        <p class="bf-sub">From a single idea to a market-ready product — ONYOU manages every stage of your brand under one roof.</p>
+        <div class="bf-cols">
+          <p>Planning, formulation, design, production, and quality — handled end to end, so you can launch with confidence and stay focused on building your brand.</p>
+          <p>Backed by trusted partner facilities and over two decades of Korean cosmetics expertise, we bring your product to global markets — made exactly to your vision.</p>
+        </div>
         <a href="#contact" class="bf-more">Start your brand</a>
       </div>
     </div>
