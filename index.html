@@ -431,7 +431,7 @@
     <div class="wrap">
       <div class="pf-head reveal">
         <h2 class="giant" style="font-size:clamp(40px,6vw,104px)">Our<span class="sp"></span>Brands</h2>
-        <p style="max-width:320px;color:var(--mut-cream);font-size:14px;text-transform:uppercase;letter-spacing:.04em">41 brands developed and manufactured with ONYOU. Select a brand to view its products.</p>
+        <p style="max-width:320px;color:var(--mut-cream);font-size:14px;text-transform:uppercase;letter-spacing:.04em">18 brands developed and manufactured with ONYOU. Select a brand to view its products.</p>
       </div>
       <div class="pf-carousel reveal">
         <button class="pf-arrow prev" id="pfPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
@@ -439,7 +439,7 @@
         <button class="pf-arrow next" id="pfNext" aria-label="More"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
       <p class="pf-hint">Swipe or use the arrows · Click a brand to view its products</p>
-      <button class="pf-showall" id="pfShowAll">Show all 41 brands</button>
+      <button class="pf-showall" id="pfShowAll">Show all 18 brands</button>
     </div>
   </section>
 
@@ -523,7 +523,7 @@
 <button class="totop" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
-  var BRANDS=[];for(var k=1;k<=41;k++){BRANDS.push({name:"Brand "+('0'+k).slice(-2),imgs:[4,3,5][k%3]});}
+  var BRANDS=[{name:"CHUIHAIR",imgs:3},{name:"CLEMIRE",imgs:2},{name:"COLORLABS",imgs:3},{name:"CUMCURA",imgs:2},{name:"DASEUL",imgs:8},{name:"DAYBIEN",imgs:23},{name:"EDVIEW",imgs:9},{name:"Fleradi",imgs:2},{name:"HIDE&SEEK",imgs:6},{name:"ILUTINE",imgs:2},{name:"INFENA",imgs:2},{name:"Louaude",imgs:10},{name:"ON THE CALI",imgs:2},{name:"POVHA",imgs:2},{name:"SERENPAUSE",imgs:2},{name:"UBERNA",imgs:3},{name:"URAON",imgs:2},{name:"YOYUN",imgs:8}];
   // EDIT: replace names/counts. Folder: images/portfolio/b01/1.jpg ... (1.jpg = cover)
   var PH='<svg viewBox="0 0 24 24" fill="none" stroke="#b6b1a4" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
   var track=document.getElementById('pfTrack');
