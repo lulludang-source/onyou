@@ -532,7 +532,7 @@
     var card=document.createElement('div');card.className='brand-card';card.dataset.index=idx;
     card.innerHTML='<div class="brand-thumb"><div class="brand-ph">'+PH+'<b>'+b.id+'</b></div>'+
       '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\')" onerror="this.remove()">'+
-      '<span class="brand-count">'+b.imgs+'</span></div><div class="brand-name">'+b.name+'</div>';
+      '<span class="brand-count">'+(idx+1)+'</span></div><div class="brand-name">'+b.name+'</div>';
     track.appendChild(card);
   });
   var pfPrev=document.getElementById('pfPrev'),pfNext=document.getElementById('pfNext');
