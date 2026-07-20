@@ -45,7 +45,7 @@
   .about-body{display:flex;justify-content:flex-end;margin-top:54px}
   .about-body-in{max-width:560px}
   .about-vision-line{font-size:clamp(28px,3.8vw,52px);font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:-.01em;color:var(--ink)}
-  .about-sub{margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  .about-sub{margin-top:8px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
   .about-sub::before{content:"";display:inline-block;width:26px;height:1px;background:var(--orange);margin-right:14px;vertical-align:middle}
   .about-lead{margin-top:16px;font-size:16px;line-height:1.85;color:var(--mut-cream)}
   .about-values{display:flex;justify-content:space-between;align-items:center;position:relative;margin-top:100px}
@@ -74,12 +74,14 @@
   .nav a:hover{opacity:1}
   .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block}
   .brand-logo{height:19px;width:auto;display:block;filter:brightness(0)}
-  .foot-logo-img{height:72px;width:auto;display:block;margin-bottom:14px}
+  .foot-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .foot-symbol-img{height:30px;width:auto;display:block}
+  .foot-symbol-fallback{height:30px;width:auto;fill:var(--white)}
   .foot-social{display:flex;gap:12px;margin-top:22px}
-  .foot-social a{width:44px;height:44px;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;transition:.2s;border:1px solid rgba(242,241,238,.4)}
-  .foot-social a:hover{background:var(--white);border-color:var(--white)}
-  .foot-social a:hover svg{stroke:var(--black)}
-  .foot-social svg{width:20px;stroke:var(--white);fill:none;stroke-width:1.5;transition:.2s}
+  .social-btn a{width:44px;height:44px;min-width:44px;flex-shrink:0;box-sizing:border-box;padding:0;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;transition:.2s;border:1.25px solid rgba(242,241,238,.4)}
+  .social-btn a:hover{background:var(--white);border-color:var(--white)}
+  .social-btn a:hover svg{stroke:var(--black)}
+  .social-btn svg{width:20px;height:20px;display:block;flex-shrink:0;stroke:var(--white);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:.2s}
   .lang{font-size:12px;letter-spacing:.1em;opacity:.6}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;position:absolute;right:0;top:50%;transform:translateY(-50%)}
   .burger span{width:24px;height:1.6px;background:var(--ink)}
@@ -164,6 +166,7 @@
   .bf-inner .ey{color:var(--mut-cream)}
   .bf-head{display:inline-flex;flex-direction:column;align-items:flex-start;max-width:100%}
   .bf-inner h2{margin-top:14px;line-height:1.02}
+  .obm-title-break{display:none}
   .bf-sub{margin-top:11px;font-size:clamp(16px,1.9vw,21px);line-height:1.6;color:var(--ink);max-width:660px}
   .bf-cols{margin-top:46px;display:grid;grid-template-columns:1fr 1fr;gap:52px;max-width:720px;text-align:left}
   .bf-cols p{font-size:15px;line-height:1.85;color:#5a574f}
@@ -180,11 +183,17 @@
   .ci-row{display:flex;justify-content:flex-end;margin-top:54px}
   .ci-body-in{max-width:640px}
   .ci-lead{margin-top:16px;font-size:16px;line-height:1.85;color:var(--mut-cream)}
+  .ci-set{width:fit-content;max-width:100%}
+  @media(max-width:880px){.ci-set{margin-left:auto;margin-right:auto}}
   .ci-symbol-row{display:flex;align-items:center;gap:36px;margin-top:32px}
   .ci-mark{width:138px;height:182px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .ci-mark-img{width:138px;height:auto;display:block}
   .ci-chips{display:flex;gap:20px}
+  .ci-chip-item{display:flex;flex-direction:column;align-items:center;gap:10px}
   .ci-chip{width:68px;height:68px;border-radius:0}
+  .ci-chip-label{text-align:center}
+  .ci-chip-label .nm{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);line-height:1.2}
+  .ci-chip-label .pn{display:block;font-size:10.5px;color:var(--mut-cream);margin-top:0;line-height:1.2}
   .ci-mark svg{width:75px;fill:var(--ink)}
   .ci-quote{margin:18px 0 26px}
   .ci p{font-size:16px;line-height:1.8;color:var(--mut-cream);max-width:460px}
@@ -198,6 +207,7 @@
   .ceo-photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#4a4a48;gap:12px}
   .ceo-photo .ph svg{width:50px;fill:currentColor;opacity:.6}
   .ceo-role{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--mut-black)}
+  .ceo-role::before{content:"";display:inline-block;width:6px;height:6px;background:var(--orange);border-radius:50%;margin-right:11px;vertical-align:1px}
   .ceo-name{font-weight:700;text-transform:uppercase;font-size:34px;letter-spacing:-.01em;margin:6px 0 20px}
   .ceo-bio p{font-size:15.5px;color:#cbcac5;margin-bottom:14px;line-height:1.75}
   .ceo-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:34px;padding-top:32px;border-top:1px solid var(--line-b)}
@@ -272,7 +282,9 @@
   /* Footer */
   footer{background:var(--black);color:var(--mut-black);padding:70px 0 34px;border-top:1px solid var(--line-b)}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px}
-  .foot-logo{font-weight:800;font-size:22px;letter-spacing:.06em;color:var(--white);margin-bottom:14px}
+  .foot-logo{font-weight:800;font-size:22px;letter-spacing:.06em;color:var(--white)}
+  .foot-wordmark-mobile{display:none}
+  .foot-tagline{font-size:13px;max-width:280px;color:var(--mut-black)}
   .foot-col h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:14px}
   .foot-col a,.foot-col p{display:block;font-size:13px;color:var(--mut-black);margin-bottom:8px;transition:.2s}
   .foot-col a:hover{color:var(--white)}
@@ -296,26 +308,30 @@
     .mobile-menu.open{display:flex}
   }
   @media(max-width:880px){
-    .hero .giant{font-size:clamp(52px,8.5vw,150px)}
-    .ci-title-break{display:none}
+    .bf-head h2.giant{font-size:clamp(30px,9.6vw,44px) !important}
+    .obm-title-break{display:inline}
+    .about-body{margin-top:28px}
+    .ci-row{margin-top:28px}
+    .bf-sub{margin-top:28px}
+    .hero .giant{font-size:clamp(37px,10.5vw,150px)}
     .wrap{padding:0 26px}
     .nav-l,.nav-r{display:none}
     .burger{display:flex}
     .mobile-menu.open{display:flex}
     .split,.feat,.ct-grid{grid-template-columns:1fr;gap:40px}
+    .ct-grid{margin-top:28px}
     .bf-head .giant{line-height:1.04}
-    .bf-sub{margin-top:36px}
     .bf-cols{margin-top:38px}
-    .ci-row{justify-content:center}
-    .ci-head{text-align:center}
-    .ci-body-in{max-width:100%;text-align:center}
-    .ci-symbol-row{gap:20px;flex-wrap:wrap;justify-content:center}
+    .ci-row{justify-content:flex-start}
+    .ci-head{text-align:left}
+    .ci-body-in{max-width:100%;text-align:left}
+    .ci-symbol-row{flex-direction:column;gap:18px;flex-wrap:wrap;justify-content:center}
     .ci-mark{width:96px;height:126px}
     .ci-mark-img{width:96px}
-    .ci-chips{gap:12px}
-    .ci-chip{width:52px;height:52px}
-    .ci-keywords{justify-content:center;gap:4px}
-    .ci-keywords span{font-size:8.5px;padding:5px 6px;letter-spacing:.01em}
+    .ci-chips{gap:27px}
+    .ci-chip{width:82px;height:82px}
+    .ci-keywords{justify-content:center;gap:8px;flex-wrap:nowrap}
+    .ci-keywords span{font-size:10px;padding:6px 6px;letter-spacing:.03em;white-space:nowrap}
     .ceo-grid{grid-template-columns:1fr;gap:34px}
     .ceo-photo{max-width:100%}
     .ceo-cols{grid-template-columns:1fr;gap:26px}
@@ -323,6 +339,7 @@
     .arrow{display:none}
     .tlist-item:hover{padding-left:4px}
     .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .foot-brand{grid-column:1/-1}
     .sec{padding:76px 0}
     .hero{padding:104px 0 0}
     .split,.tlist,.svc-item,.tlist-item{min-width:0}
@@ -341,7 +358,14 @@
   @media(max-width:520px){
     .bm-grid{grid-template-columns:repeat(2,1fr)}
     .ct-row{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr}
+    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
+    .foot-grid{display:block;padding-bottom:0}
+    .foot-brand{grid-column:auto}
+    .foot-logo-row{display:none}
+    .foot-tagline{display:none}
+    .foot-wordmark-mobile{display:block;height:24px;width:auto}
+    .foot-company,.foot-contact,.foot-identity{display:none}
+    .foot-bottom{flex-direction:column;align-items:flex-end;text-align:right;gap:4px;padding-top:0;border-top:0}
   }
   @media(min-width:881px){.ci-keywords{gap:20px}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
@@ -503,7 +527,7 @@
     <div class="wrap">
       <div class="bf-inner reveal">
         <div class="bf-head">
-          <h2 class="giant" style="font-size:clamp(52px,5vw,80px);text-align:center">OBM Turnkey Manufacturing</h2>
+          <h2 class="giant" style="font-size:clamp(52px,5vw,80px);text-align:center">OBM Turnkey<br class="obm-title-break">Manufacturing</h2>
         </div>
         <p class="bf-sub">From a single idea to a market-ready product<br>— ONYOU manages every stage of your brand under one roof.</p>
         <div class="bf-cols">
@@ -573,18 +597,29 @@
         <div class="ci-body-in">
           <h3 class="about-vision-line">Everything Starts<br>With People</h3>
           <p class="ci-lead">The combination of ONYOU's wordmark and symbol reflects our commitment to our core values while expressing warmth, balance, and thoughtful consideration. The image of people coming together represents the spirit and identity of ONYOU.</p>
+          <div class="ci-set">
           <div class="ci-symbol-row">
             <div class="ci-mark">
               <img class="ci-mark-img" src="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png" alt="ONYOU symbol" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
               <svg viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
             </div>
             <div class="ci-chips">
-              <div class="ci-chip" style="background:#141414" title="Black · Pantone Black C"></div>
-              <div class="ci-chip" style="background:#e8743b" title="Orange · Pantone 165C"></div>
-              <div class="ci-chip" style="background:#a7a9ac" title="Gray · Cool Gray 4C"></div>
+              <div class="ci-chip-item">
+                <div class="ci-chip" style="background:#141414"></div>
+                <div class="ci-chip-label"><span class="nm">Black</span><span class="pn">Pantone Black C</span></div>
+              </div>
+              <div class="ci-chip-item">
+                <div class="ci-chip" style="background:#e8743b"></div>
+                <div class="ci-chip-label"><span class="nm">Orange</span><span class="pn">Pantone 165C</span></div>
+              </div>
+              <div class="ci-chip-item">
+                <div class="ci-chip" style="background:#a7a9ac"></div>
+                <div class="ci-chip-label"><span class="nm">Gray</span><span class="pn">Cool Gray 4C</span></div>
+              </div>
             </div>
           </div>
           <div class="ci-keywords"><span>Beauty</span><span>Client</span><span>Communication</span><span>Company</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -619,6 +654,14 @@
             <div><div class="lbl">Email</div><div class="val">wool@onyoucompany.co.kr</div></div>
             <div><div class="lbl">Location</div><div class="val">Seoul, Republic of Korea</div></div>
             <div><div class="lbl">Website</div><div class="val">www.onyoucompany.co.kr</div></div>
+            <div>
+              <div class="lbl">Instagram</div>
+              <div class="social-btn" style="margin-top:8px">
+                <a href="https://www.instagram.com/onyou_pf/" target="_blank" rel="noopener" aria-label="ONYOU Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <form class="ct-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -645,27 +688,26 @@
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <div>
-        <img class="foot-logo-img" src="images/logo/ONYOU-LOGO-09-SB-TEXT-V-WHITE.png" alt="ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div class="foot-logo" style="display:none">ONYOU</div>
-        <p style="font-size:13px;max-width:280px;color:var(--mut-black)">OBM Turnkey Manufacturing from Korea.</p>
+      <div class="foot-brand">
+        <div class="foot-logo-row">
+          <img class="foot-symbol-img" src="images/logo/ONYOU-LOGO-02-SYMBOL-WHITE.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg class="foot-symbol-fallback" viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
+          <span class="foot-logo">ONYOU</span>
+        </div>
+        <img class="foot-wordmark-mobile" src="images/logo/ONYOU-LOGO-03-MG-TEXT-WH.png" alt="ONYOU">
+        <p class="foot-tagline">OBM Turnkey Manufacturing from Korea.</p>
       </div>
-      <div class="foot-col">
+      <div class="foot-col foot-company">
         <h5>Company</h5>
         <a href="#about">About</a><a href="#business">Business</a><a href="#portfolio">Portfolio</a>
       </div>
-      <div class="foot-col">
+      <div class="foot-col foot-contact">
         <h5>Contact</h5>
         <p>Seoul, Republic of Korea</p><p>wool@onyoucompany.co.kr</p><a href="https://www.onyoucompany.co.kr">Korean Website</a>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/onyou_pf/" target="_blank" rel="noopener" aria-label="ONYOU Instagram">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg>
-          </a>
-        </div>
       </div>
-      <div class="foot-col">
+      <div class="foot-col foot-identity">
         <h5>Identity</h5>
-        <p>Beauty</p><p>Client</p><p>Communication</p><p>Company</p>
+        <p>Beauty · Client · Communication · Company</p>
       </div>
     </div>
     <div class="foot-bottom">
