@@ -80,7 +80,7 @@
   .foot-social a:hover{background:transparent;border-color:var(--line-b)}
   .foot-social a:hover svg{stroke:var(--white)}
   .foot-social svg{width:22px;stroke:var(--black);fill:none;stroke-width:1.6;transition:.2s}
-  .ci-mark-img{width:96px;height:auto;display:block}
+  .ci-mark-img{width:130px;height:auto;display:block}
   .lang{font-size:12px;letter-spacing:.1em;opacity:.6}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;position:absolute;right:0;top:50%;transform:translateY(-50%)}
   .burger span{width:24px;height:1.6px;background:var(--ink)}
@@ -105,7 +105,7 @@
   .hero-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
   .hd{width:7px;height:7px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(17,17,16,.3);transition:background .3s,transform .3s}
   .hd.active{background:var(--orange);transform:scale(1.25)}
-  @media(max-width:640px){.hero-roll{height:clamp(480px,128vw,700px)}}
+  @media(max-width:640px){.hero-roll{height:clamp(340px,88vw,460px)}}
 
   /* Thin-line list w/ hover arrow */
   .split{display:grid;grid-template-columns:1fr 1.05fr;gap:64px}
@@ -183,7 +183,7 @@
   .ci-keywords{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
   .ci-keywords span{border:1px solid var(--line-c);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px}
   .ci-symbol{display:flex;flex-direction:column;align-items:center;gap:36px}
-  .ci-mark{width:190px;height:190px;border:1px solid var(--line-c);display:flex;align-items:center;justify-content:center}
+  .ci-mark{width:190px;height:190px;display:flex;align-items:center;justify-content:center}
   .ci-mark svg{width:88px;fill:var(--ink)}
   .ci-colors{display:flex;gap:28px}
   .ci-color{text-align:center}
@@ -310,6 +310,10 @@
     .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
     .sec{padding:76px 0}
     .hero{padding:104px 0 0}
+    .split,.tlist,.svc-item,.tlist-item{min-width:0}
+    .tlabel{white-space:normal;line-height:1.15}
+    .ey{letter-spacing:.14em}
+    .about-sub,.vision-sub,.ceo-role,.ceo-cols h4,.foot-col h5,.ct-info .lbl,.ct-form label,.hero-cap,.feat .more,.bf-more,.pf-showall,.ct-submit{letter-spacing:.1em}
   }
   @media(max-width:768px){
     .pf-track{grid-auto-flow:row;grid-template-columns:1fr 1fr;overflow:visible;scroll-snap-type:none;gap:14px;padding:4px 0}
