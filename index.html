@@ -74,9 +74,7 @@
   .nav a:hover{opacity:1}
   .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block}
   .brand-logo{height:19px;width:auto;display:block;filter:brightness(0)}
-  .foot-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .foot-symbol-img{height:30px;width:auto;display:block}
-  .foot-symbol-fallback{height:30px;width:auto;fill:var(--white)}
+  .foot-wordmark{height:22px;width:auto;display:block;margin-bottom:14px}
   .foot-social{display:flex;gap:12px;margin-top:22px}
   .social-btn a{width:44px;height:44px;min-width:44px;flex-shrink:0;box-sizing:border-box;padding:0;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;transition:.2s;border:1.25px solid rgba(242,241,238,.4)}
   .social-btn a:hover{background:var(--white);border-color:var(--white)}
@@ -186,7 +184,7 @@
   .ci-set{width:fit-content;max-width:100%}
   @media(max-width:880px){.ci-set{margin-left:auto;margin-right:auto}}
   .ci-symbol-row{display:flex;align-items:center;gap:36px;margin-top:32px}
-  .ci-mark{width:138px;height:182px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ci-mark{width:138px;height:182px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .ci-mark-img{width:138px;height:auto;display:block}
   .ci-chips{display:flex;gap:20px}
   .ci-chip-item{display:flex;flex-direction:column;align-items:center;gap:10px}
@@ -272,6 +270,7 @@
   .ct-form .field{margin-bottom:16px}
   .ct-form label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-black);margin-bottom:7px}
   .ct-form input,.ct-form select,.ct-form textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-b);padding:10px 0;font-family:var(--font);font-size:15px;color:var(--white);transition:.2s}
+  .ct-form select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="%23f2f1ee" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');background-repeat:no-repeat;background-position:right 2px center;background-size:16px;padding-right:26px}
   .ct-form input:focus,.ct-form select:focus,.ct-form textarea:focus{outline:none;border-bottom-color:var(--white)}
   .ct-form select option{background:var(--black)}
   .ct-form textarea{resize:vertical;min-height:90px}
@@ -282,8 +281,6 @@
   /* Footer */
   footer{background:var(--black);color:var(--mut-black);padding:70px 0 34px;border-top:1px solid var(--line-b)}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px}
-  .foot-logo{font-weight:800;font-size:22px;letter-spacing:.06em;color:var(--white)}
-  .foot-wordmark-mobile{display:none}
   .foot-tagline{font-size:13px;max-width:280px;color:var(--mut-black)}
   .foot-col h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:14px}
   .foot-col a,.foot-col p{display:block;font-size:13px;color:var(--mut-black);margin-bottom:8px;transition:.2s}
@@ -358,14 +355,13 @@
   @media(max-width:520px){
     .bm-grid{grid-template-columns:repeat(2,1fr)}
     .ct-row{grid-template-columns:1fr}
-    footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
-    .foot-grid{display:block;padding-bottom:0}
-    .foot-brand{grid-column:auto}
-    .foot-logo-row{display:none}
+    footer .wrap{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+    .foot-grid{display:block;padding-bottom:0;width:100%}
+    .foot-brand{grid-column:auto;display:flex;flex-direction:column;align-items:flex-end}
     .foot-tagline{display:none}
-    .foot-wordmark-mobile{display:block;height:24px;width:auto}
+    .foot-wordmark{height:20px;width:auto;margin-bottom:0}
     .foot-company,.foot-contact,.foot-identity{display:none}
-    .foot-bottom{flex-direction:column;align-items:flex-end;text-align:right;gap:4px;padding-top:0;border-top:0}
+    .foot-bottom{flex-direction:column;align-items:flex-end;text-align:right;gap:4px;padding-top:0;border-top:0;width:100%}
   }
   @media(min-width:881px){.ci-keywords{gap:20px}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{scroll-behavior:auto}}
@@ -600,8 +596,8 @@
           <div class="ci-set">
           <div class="ci-symbol-row">
             <div class="ci-mark">
-              <img class="ci-mark-img" src="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png" alt="ONYOU symbol" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-              <svg viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
+              <img class="ci-mark-img" width="138" height="182" src="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png" alt="ONYOU symbol" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+              <svg width="75" height="75" viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
             </div>
             <div class="ci-chips">
               <div class="ci-chip-item">
@@ -689,12 +685,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="foot-logo-row">
-          <img class="foot-symbol-img" src="images/logo/ONYOU-LOGO-02-SYMBOL-WHITE.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <svg class="foot-symbol-fallback" viewBox="0 0 64 64" style="display:none"><use href="#ppl"/></svg>
-          <span class="foot-logo">ONYOU</span>
-        </div>
-        <img class="foot-wordmark-mobile" src="images/logo/ONYOU-LOGO-03-MG-TEXT-WH.png" alt="ONYOU">
+        <img class="foot-wordmark" width="220" height="25" src="images/logo/ONYOU-LOGO-03-MG-TEXT-WH.png" alt="ONYOU">
         <p class="foot-tagline">OBM Turnkey Manufacturing from Korea.</p>
       </div>
       <div class="foot-col foot-company">
