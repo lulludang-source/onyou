@@ -730,8 +730,8 @@
   BRANDS.forEach(function(b,idx){
     var card=document.createElement('div');card.className='brand-card';card.dataset.index=idx;
     card.innerHTML='<div class="brand-thumb"><div class="brand-ph">'+PH+'<b>'+b.id+'</b></div>'+
-      '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\')" onerror="this.remove()">'+
-      '<span class="brand-count">'+(idx+1)+'</span></div><div class="brand-name">'+b.name+'</div>';
+      '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\');this.previousElementSibling.style.display=\'none\'" onerror="this.remove()">'+
+      '</div><div class="brand-name">'+b.name+'</div>';
     track.appendChild(card);
   });
   var pfPrev=document.getElementById('pfPrev'),pfNext=document.getElementById('pfNext');
@@ -747,7 +747,7 @@
   function openBrand(i){var b=BRANDS[i];bmT.textContent=b.name;bmG.innerHTML='';cur=[];
     for(var j=1;j<=b.imgs;j++){var s='images/portfolio/'+b.id+'/'+j+'.jpg';cur.push(s);
       var d=document.createElement('div');d.className='bm-img';d.dataset.i=j-1;
-      d.innerHTML='<div class="brand-ph">'+PH+'<b>'+j+'</b></div><img loading="lazy" src="'+s+'" onload="this.classList.add(\'loaded\')" onerror="this.remove()">';bmG.appendChild(d);}
+      d.innerHTML='<div class="brand-ph">'+PH+'<b>'+j+'</b></div><img loading="lazy" src="'+s+'" onload="this.classList.add(\'loaded\');this.previousElementSibling.style.display=\'none\'" onerror="this.remove()">';bmG.appendChild(d);}
     bm.classList.add('open');document.body.style.overflow='hidden';}
   function closeBrand(){bm.classList.remove('open');document.body.style.overflow='';}
   document.getElementById('bmClose').onclick=closeBrand;bm.addEventListener('click',function(e){if(e.target===bm)closeBrand();});
