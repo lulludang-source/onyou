@@ -640,7 +640,6 @@
         <div class="pf-track" id="pfTrack"></div>
         <button class="pf-arrow next" id="pfNext" aria-label="More"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
-      <p class="pf-hint">Swipe or use the arrows · Click a brand to view its products</p>
       <button class="pf-showall" id="pfShowAll">Show all brands</button>
     </div>
   </section>
@@ -757,6 +756,31 @@
   function upd(){pfPrev.classList.toggle('disabled',track.scrollLeft<10);pfNext.classList.toggle('disabled',track.scrollLeft+track.clientWidth>=track.scrollWidth-10);}
   track.addEventListener('scroll',upd);window.addEventListener('resize',upd);setTimeout(upd,120);
   var sa=document.getElementById('pfShowAll');if(sa){sa.addEventListener('click',function(){track.classList.add('expanded');sa.classList.add('hidden');});}
+
+  // Slow auto-flowing scroll, pauses on hover/touch/manual nav
+  // (scroll-snap must be switched off while auto-playing — Chrome ignores
+  // direct scrollLeft writes on a mandatory-snap container otherwise)
+  var pfPlaying=true,pfHover=false,pfResumeT=null,pfSnapOn=true;
+  function pfSetSnap(on){if(on===pfSnapOn)return;pfSnapOn=on;track.style.scrollSnapType=on?'x mandatory':'none';}
+  function pfPause(ms){pfPlaying=false;if(pfResumeT)clearTimeout(pfResumeT);pfResumeT=setTimeout(function(){pfResumeT=null;if(!pfHover)pfPlaying=true;},ms||2500);}
+  function pfLoop(){
+    var active=pfPlaying&&!pfHover&&!track.classList.contains('expanded');
+    pfSetSnap(!active);
+    if(active){
+      var max=track.scrollWidth-track.clientWidth;
+      if(max>0){
+        if(track.scrollLeft>=max-1)track.scroll({left:0,behavior:'auto'});
+        else track.scrollBy({left:0.6,behavior:'auto'});
+      }
+    }
+    requestAnimationFrame(pfLoop);
+  }
+  requestAnimationFrame(pfLoop);
+  track.addEventListener('mouseenter',function(){pfHover=true;});
+  track.addEventListener('mouseleave',function(){pfHover=false;});
+  track.addEventListener('touchstart',function(){pfPause(3500);},{passive:true});
+  pfPrev.addEventListener('click',function(){pfPause(3500);});
+  pfNext.addEventListener('click',function(){pfPause(3500);});
 
   var bm=document.getElementById('bm'),bmT=document.getElementById('bmTitle'),bmG=document.getElementById('bmGrid'),cur=[];
   track.addEventListener('click',function(e){var c=e.target.closest('.brand-card');if(c)openBrand(+c.dataset.index);});
