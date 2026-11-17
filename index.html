@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>UNITBRAND — Cosmetics Brands for Diverse Lifestyles</title>
-<link rel="icon" type="image/png" href="images/logo/unitbrandlogoblack.png">
-<link rel="apple-touch-icon" href="images/logo/unitbrandlogoblack.png">
-<meta name="description" content="UNITBRAND creates brands rooted in an understanding of diverse lifestyles and consumer needs, turning ideas into products and brands that meet everyday needs." />
+<title>ONYOU — Korean Cosmetics Manufacturing Partner</title>
+<link rel="icon" type="image/png" href="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png">
+<link rel="apple-touch-icon" href="images/logo/ONYOU-LOGO-02-SYMBOL-GREY.png">
+<meta name="description" content="ONYOU delivers full OBM turnkey cosmetics manufacturing for global beauty brands — from planning and formulation to production and export, built on Korea's proven expertise." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -77,8 +77,8 @@
   .nav a{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .2s}
   .nav a:hover{opacity:1}
   .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block}
-  .brand-logo{height:38px;width:auto;display:block;filter:brightness(0)}
-  .foot-wordmark{height:44px;width:auto;display:block;margin-bottom:14px}
+  .brand-logo{height:19px;width:auto;display:block;filter:brightness(0)}
+  .foot-wordmark{height:22px;width:auto;display:block;margin-bottom:14px}
   .foot-social{display:flex;gap:12px;margin-top:22px}
   .social-btn a{width:44px;height:44px;min-width:44px;flex-shrink:0;box-sizing:border-box;padding:0;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;transition:.2s;border:1.25px solid rgba(242,241,238,.4)}
   .social-btn a:hover{background:var(--white);border-color:var(--white)}
@@ -220,10 +220,10 @@
   /* Portfolio */
   .pf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px}
   .pf-carousel{position:relative}
-  .pf-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 75px)/6);gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 14px;scrollbar-width:none;-ms-overflow-style:none}
+  .pf-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 75px)/6);gap:15px;overflow-x:auto;scroll-snap-type:none;scroll-behavior:auto;padding:4px 4px 14px;scrollbar-width:none;-ms-overflow-style:none}
   .pf-track::-webkit-scrollbar{display:none}
   .brand-card{scroll-snap-align:start;cursor:pointer;display:flex;flex-direction:column;gap:12px}
-  .brand-thumb{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--cream-2);transition:.3s var(--ease)}
+  .brand-thumb{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cream-2);transition:.3s var(--ease)}
   .brand-card:hover .brand-thumb{transform:translateY(-4px)}
   .brand-thumb img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s,transform .5s var(--ease)}
   .brand-thumb img.loaded{opacity:1}
@@ -231,7 +231,6 @@
   .brand-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
   .brand-ph svg{width:24px;opacity:.35;fill:#b6b1a4}
   .brand-ph b{font-size:12px;font-weight:600;color:#b6b1a4}
-  .brand-count{position:absolute;top:10px;right:10px;background:var(--ink);color:var(--cream);font-size:11px;font-weight:600;padding:4px 9px}
   .brand-name{font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;text-align:center}
   .pf-arrow{position:absolute;top:36%;width:46px;height:46px;border-radius:50%;background:var(--cream);border:1px solid var(--line-c);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s}
   .pf-arrow:hover{background:var(--ink)}
@@ -252,7 +251,7 @@
   .bm-close{width:42px;height:42px;border:1px solid var(--line-c);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .bm-close svg{width:20px;stroke:var(--ink);fill:none;stroke-width:2}
   .bm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .bm-img{aspect-ratio:3/4;overflow:hidden;background:var(--cream-2);cursor:pointer;position:relative}
+  .bm-img{aspect-ratio:1/1;overflow:hidden;background:var(--cream-2);cursor:pointer;position:relative}
   .bm-img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s,transform .4s var(--ease)}
   .bm-img img.loaded{opacity:1}
   .bm-img:hover img.loaded{transform:scale(1.05)}
@@ -364,6 +363,7 @@
     .pf-track{grid-auto-flow:row;grid-template-columns:1fr 1fr;overflow:visible;scroll-snap-type:none;gap:14px;padding:4px 0}
     .pf-track .brand-card:nth-child(n+7){display:none}
     .pf-track.expanded .brand-card:nth-child(n+7){display:flex}
+    .pf-track .brand-card.pf-clone{display:none !important}
     .pf-hint{display:none}
     .pf-showall{display:flex;align-items:center;justify-content:center;width:fit-content}
   }
@@ -374,7 +374,7 @@
     .foot-grid{display:block;padding-bottom:0;width:100%}
     .foot-brand{grid-column:auto;display:flex;flex-direction:column;align-items:flex-start}
     .foot-tagline{display:none}
-    .foot-wordmark{height:40px;width:auto;margin-bottom:0}
+    .foot-wordmark{height:20px;width:auto;margin-bottom:0}
     .foot-company,.foot-contact,.foot-identity{display:none}
     .foot-bottom{flex-direction:column;align-items:flex-start;text-align:left;gap:4px;padding-top:0;border-top:0;width:100%}
   }
@@ -393,8 +393,8 @@
       <a href="#services">Services</a>
       <a href="#business">Business</a>
     </div>
-    <a href="#top" class="brand" aria-label="UNITBRAND">
-      <img class="brand-logo" src="images/logo/unitbrandlogoblack.png" alt="UNITBRAND">
+    <a href="#top" class="brand" aria-label="ONYOU">
+      <img class="brand-logo" src="images/logo/ONYOU-LOGO-03-MG-TEXT-GREY.png" alt="ONYOU">
     </a>
     <div class="nav-r">
       <a href="#founder">Founder</a>
@@ -419,8 +419,8 @@
   <section class="hero hero-full">
     <img src="images/hero/hero-1.jpg" alt="Formulation texture" class="hero-full-img">
     <div class="hero-full-content wrap">
-      <h1 class="giant reveal">Brands for<br>diverse lifestyles</h1>
-      <p class="hero-sub reveal">UNITBRAND creates brands rooted in an understanding of diverse lifestyles<br class="hero-sub-break"> and consumer needs, turning ideas into products that meet everyday needs.</p>
+      <h1 class="giant reveal">Cosmetics<br>made in Korea</h1>
+      <p class="hero-sub reveal">Full OBM turnkey manufacturing for global beauty brands—from planning and formulation<br class="hero-sub-break"> to production and export, built on over 20 years of Korean cosmetics expertise.</p>
     </div>
   </section>
 
@@ -434,7 +434,7 @@
         <div class="about-body-in">
           <h3 class="about-vision-line">Beauty Trend Leader</h3>
           <p class="about-sub">Global Beauty Solutions Provider</p>
-          <p class="about-lead">UNITBRAND is a comprehensive cosmetics solution provider — combining deep industry experience with the latest beauty trends, technologies, and market insights to guide every brand we work with.</p>
+          <p class="about-lead">ONYOU is a comprehensive cosmetics solution provider — combining deep industry experience with the latest beauty trends, technologies, and market insights to guide every brand we work with.</p>
         </div>
       </div>
       <div class="about-values reveal">
@@ -452,7 +452,7 @@
     <div class="wrap split">
       <div class="split-left reveal">
         <h2 class="giant" style="font-size:clamp(52px,5.6vw,88px)">Our<br>Services</h2>
-        <p class="split-desc">With full OBM turnkey management, UNITBRAND tailors every service to your brand — handling the entire process from concepts to the finished product. We turn your idea into a market-ready product while you focus on building your brand.</p>
+        <p class="split-desc">With full OBM turnkey management, ONYOU tailors every service to your brand — handling the entire process from concepts to the finished product. We turn your idea into a market-ready product while you focus on building your brand.</p>
         <p class="split-meta ey">OBM Turnkey · Made in Korea</p>
       </div>
       <div class="tlist reveal" id="svcList">
@@ -531,7 +531,7 @@
         <div class="bf-head">
           <h2 class="giant" style="font-size:clamp(52px,5vw,80px);text-align:center">OBM Turnkey <br class="obm-title-break">Manufacturing</h2>
         </div>
-        <p class="bf-sub">From a single idea to a market-ready product<br>— UNITBRAND manages every stage of your brand under one roof.</p>
+        <p class="bf-sub">From a single idea to a market-ready product<br>— ONYOU manages every stage of your brand under one roof.</p>
         <div class="bf-cols">
           <p>Planning, formulation, design, production, and quality — handled end to end, so you can launch with confidence and stay focused on building your brand.</p>
           <p>Backed by trusted partner facilities and over two decades of Korean cosmetics expertise, we bring your product to global markets — made exactly to your vision.</p>
@@ -547,7 +547,7 @@
       <h2 class="giant reveal" style="font-size:clamp(52px,6vw,104px)">Meet the<span class="sp"></span>Founder</h2>
       <div class="ceo-grid">
         <div class="ceo-photo reveal">
-          <img src="images/ceo.jpg" alt="Wool Hong, Founder & CEO of UNITBRAND" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <img src="images/ceo.jpg" alt="Wool Hong, Founder & CEO of ONYOU" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="ph" style="display:none"><svg viewBox="0 0 64 64"><use href="#ppl"/></svg><span style="font-size:12px">images/ceo.jpg</span></div>
         </div>
         <div class="reveal">
@@ -556,7 +556,7 @@
           <div class="ceo-bio">
             <p>With over 20 years of experience in the cosmetics industry, Wool Hong has successfully led numerous brand development, product launch, and commercialization projects.</p>
             <p>Drawing on extensive expertise in marketing, product planning, product development, and brand management, she has built a strong track record across leading beauty companies, manufacturers, and R&amp;D organizations.</p>
-            <p>As the Founder &amp; CEO of UNITBRAND, she provides professional consulting and strategic guidance in cosmetics product development, brand building, manufacturing, and business growth.</p>
+            <p>As the Founder &amp; CEO of ONYOU Co., Ltd., she provides professional consulting and strategic guidance in cosmetics product development, brand building, manufacturing, and business growth.</p>
           </div>
           <div class="ceo-cols">
             <div>
@@ -568,7 +568,7 @@
                 <li>Product Planning, Bandi Nail &amp; Color Cosmetics</li>
                 <li>Product Planning, PLU</li>
                 <li>Head of Product Development, Design &amp; Quality, CELAB R&amp;D Center</li>
-                <li>Founder &amp; CEO, UNITBRAND (2019–Present)</li>
+                <li>Founder &amp; CEO, ONYOU Co., Ltd. (2019–Present)</li>
               </ul>
             </div>
             <div>
@@ -590,7 +590,7 @@
   </section>
 
   <!-- CI (cream) -->
-  <section class="sec cream" style="display:none" data-hidden-reason="UNITBRAND temp rebrand — client asked to hide Brand Identity page">
+  <section class="sec cream">
     <div class="wrap">
       <div class="ci-head reveal">
         <h2 class="giant" style="font-size:clamp(52px,6vw,104px)">Brand<span class="sp"></span><br class="ci-title-break">Identity</h2>
@@ -633,13 +633,14 @@
     <div class="wrap">
       <div class="pf-head reveal">
         <h2 class="giant" style="font-size:clamp(52px,6vw,104px)">Our<span class="sp"></span>Brands</h2>
-        <p style="max-width:320px;color:var(--mut-cream);font-size:14px;text-transform:uppercase;letter-spacing:.04em">Brands developed and manufactured with UNITBRAND. Select a brand to view its products.</p>
+        <p style="max-width:320px;color:var(--mut-cream);font-size:14px;text-transform:uppercase;letter-spacing:.04em">Brands developed and manufactured with ONYOU.<br>Select a brand to view its products.</p>
       </div>
       <div class="pf-carousel reveal">
         <button class="pf-arrow prev" id="pfPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
         <div class="pf-track" id="pfTrack"></div>
         <button class="pf-arrow next" id="pfNext" aria-label="More"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
+      <p class="pf-hint">Swipe or use the arrows · Click a brand to view its products</p>
       <button class="pf-showall" id="pfShowAll">Show all brands</button>
     </div>
   </section>
@@ -654,11 +655,11 @@
           <div class="ct-info">
             <div><div class="lbl">Email</div><div class="val">wool@onyoucompany.co.kr</div></div>
             <div><div class="lbl">Location</div><div class="val">Seoul, Republic of Korea</div></div>
-            <div><div class="lbl">Website</div><div class="val">www.unit-brand.com</div></div>
+            <div><div class="lbl">Website</div><div class="val">www.onyoucompany.co.kr</div></div>
             <div>
               <div class="lbl">Instagram</div>
               <div class="social-btn" style="margin-top:8px">
-                <a href="#" target="_blank" rel="noopener" aria-label="UNITBRAND Instagram">
+                <a href="https://www.instagram.com/onyou_pf/" target="_blank" rel="noopener" aria-label="ONYOU Instagram">
                   <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg>
                 </a>
               </div>
@@ -698,24 +699,25 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img class="foot-wordmark" width="150" height="43" src="images/logo/UNITBRAND-LOGO-BLACK-WHITE.png" alt="UNITBRAND">
-        <p class="foot-tagline">Brands for diverse lifestyles, created by UNITBRAND.</p>
+        <img class="foot-wordmark" width="220" height="25" src="images/logo/ONYOU-LOGO-03-MG-TEXT-WH.png" alt="ONYOU">
+        <p class="foot-tagline">OBM Turnkey Manufacturing from Korea.</p>
       </div>
       <div class="foot-col foot-company">
         <h5>Company</h5>
-        <a href="#about">About</a><a href="#services">Services</a><a href="#business">Business</a><a href="#founder">Founder</a><a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a><a href="#business">Business</a><a href="#portfolio">Portfolio</a>
       </div>
       <div class="foot-col foot-contact">
         <h5>Contact</h5>
-        <p>Seoul, Republic of Korea</p><p>wool@onyoucompany.co.kr</p><a href="https://www.unit-brand.com">www.unit-brand.com</a>
+        <p>Seoul, Republic of Korea</p><p>wool@onyoucompany.co.kr</p><a href="https://www.onyoucompany.co.kr">Korean Website</a>
       </div>
-      <div class="foot-col foot-identity" style="display:none">
+      <div class="foot-col foot-identity">
         <h5>Identity</h5>
         <p>Beauty · Client · Communication · Company</p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© UNITBRAND. All rights reserved.</span>
+      <span>© ONYOU Co., Ltd. All rights reserved.</span>
+      <span>K-Beauty from Korea</span>
     </div>
   </div>
 </footer>
@@ -738,56 +740,68 @@
 <button class="totop" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
-  var BRANDS=[{id:"056",name:"No. 056",imgs:2},{id:"001",name:"No. 001",imgs:1},{id:"002",name:"No. 002",imgs:6},{id:"003",name:"No. 003",imgs:1},{id:"004",name:"No. 004",imgs:9},{id:"005",name:"No. 005",imgs:6},{id:"006",name:"No. 006",imgs:5},{id:"007",name:"No. 007",imgs:4},{id:"008",name:"No. 008",imgs:3},{id:"009",name:"No. 009",imgs:3},{id:"010",name:"No. 010",imgs:1},{id:"011",name:"No. 011",imgs:2},{id:"012",name:"No. 012",imgs:3},{id:"013",name:"No. 013",imgs:6},{id:"014",name:"No. 014",imgs:12},{id:"015",name:"No. 015",imgs:4},{id:"016",name:"No. 016",imgs:3},{id:"017",name:"No. 017",imgs:2},{id:"018",name:"No. 018",imgs:6},{id:"019",name:"No. 019",imgs:4},{id:"020",name:"No. 020",imgs:7},{id:"021",name:"No. 021",imgs:8},{id:"022",name:"No. 022",imgs:8},{id:"023",name:"No. 023",imgs:7},{id:"024",name:"No. 024",imgs:12},{id:"025",name:"No. 025",imgs:4},{id:"026",name:"No. 026",imgs:8},{id:"027",name:"No. 027",imgs:4},{id:"028",name:"No. 028",imgs:3},{id:"029",name:"No. 029",imgs:6},{id:"030",name:"No. 030",imgs:4},{id:"031",name:"No. 031",imgs:6},{id:"032",name:"No. 032",imgs:1},{id:"033",name:"No. 033",imgs:9},{id:"034",name:"No. 034",imgs:16},{id:"035",name:"No. 035",imgs:4},{id:"036",name:"No. 036",imgs:3},{id:"037",name:"No. 037",imgs:11},{id:"038",name:"No. 038",imgs:5},{id:"039",name:"No. 039",imgs:1},{id:"040",name:"No. 040",imgs:5},{id:"041",name:"No. 041",imgs:10},{id:"042",name:"No. 042",imgs:3},{id:"043",name:"No. 043",imgs:3},{id:"044",name:"No. 044",imgs:6},{id:"045",name:"No. 045",imgs:10},{id:"046",name:"No. 046",imgs:3},{id:"047",name:"No. 047",imgs:4},{id:"048",name:"No. 048",imgs:3},{id:"049",name:"No. 049",imgs:3},{id:"050",name:"No. 050",imgs:10},{id:"051",name:"No. 051",imgs:6},{id:"052",name:"No. 052",imgs:4},{id:"053",name:"No. 053",imgs:5},{id:"054",name:"No. 054",imgs:4},{id:"055",name:"No. 055",imgs:7}];
-  // EDIT: replace names/counts. Folder: images/portfolio/b01/1.jpg ... (1.jpg = cover)
+  var BRANDS=[{id:"056",name:"TOUCH IN SOL",imgs:2},{id:"055",name:"CUMCURA",imgs:7},{id:"054",name:"RUNSLOW",imgs:4},{id:"053",name:"ILUTINE",imgs:5},{id:"052",name:"MIGUHARA",imgs:4},{id:"051",name:"TARAJU",imgs:6},{id:"050",name:"Motifull",imgs:10},{id:"049",name:"M_CURIE",imgs:3},{id:"048",name:"UBERNA",imgs:3},{id:"047",name:"KIERA",imgs:4},{id:"046",name:"ON THE CALI",imgs:3},{id:"045",name:"Louaude",imgs:10},{id:"044",name:"AUDEW",imgs:6},{id:"043",name:"KIERA",imgs:3},{id:"042",name:"ONIRO",imgs:3},{id:"041",name:"DASEUL'",imgs:10},{id:"040",name:"RUNSLOW",imgs:5},{id:"039",name:"CHUIHAIR",imgs:1},{id:"038",name:"CLEMIRE",imgs:5},{id:"037",name:"DASEUL'",imgs:11},{id:"036",name:"URAON",imgs:3},{id:"035",name:"AUDEW",imgs:4},{id:"034",name:"DAYBIEN",imgs:16},{id:"033",name:"MYROOTY",imgs:7},{id:"032",name:"DEWFOLA",imgs:1},{id:"031",name:"MUEI",imgs:6},{id:"030",name:"ALLOY",imgs:4},{id:"029",name:"NDEARGO",imgs:6},{id:"028",name:"AUDEW",imgs:3},{id:"027",name:"SERENPAUSE",imgs:4},{id:"026",name:"ATEMPO",imgs:8},{id:"025",name:"RUNSLOW",imgs:4},{id:"024",name:"INFENA",imgs:12},{id:"023",name:"DEAR B",imgs:7},{id:"022",name:"YOYUN",imgs:8},{id:"021",name:"CHUIHAIR mojito line",imgs:8},{id:"020",name:"RUNSLOW",imgs:7},{id:"019",name:"LILADD",imgs:4},{id:"018",name:"CHUIHAIR",imgs:6},{id:"017",name:"AUDEW",imgs:2},{id:"016",name:"AILL",imgs:3},{id:"015",name:"VIKTIG",imgs:4},{id:"014",name:"EDVIEW",imgs:12},{id:"013",name:"HIDE&SEEK",imgs:6},{id:"012",name:"COLORLABS",imgs:3},{id:"011",name:"MOSTRONG",imgs:2},{id:"010",name:"RECABELLO",imgs:1},{id:"009",name:"AVVIO",imgs:3},{id:"008",name:"JOSUN",imgs:3},{id:"007",name:"AUDEW",imgs:4},{id:"006",name:"POVHA",imgs:5},{id:"005",name:"Fleradi",imgs:6},{id:"004",name:"RUNSLOW",imgs:9},{id:"003",name:"CAU",imgs:1},{id:"002",name:"BRISKIN",imgs:6},{id:"001",name:"ARASOOP",imgs:1}];
+  // Folder: images/portfolio/056/1.jpg ... (1.jpg = cover). Folder id = 3-digit brand number (001-056).
   var PH='<svg viewBox="0 0 24 24" fill="none" stroke="#b6b1a4" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>';
   var track=document.getElementById('pfTrack');
-  BRANDS.forEach(function(b,idx){
-    var card=document.createElement('div');card.className='brand-card';card.dataset.index=idx;
-    card.innerHTML='<div class="brand-thumb"><div class="brand-ph">'+PH+'<b>'+b.id+'</b></div>'+
-      '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\')" onerror="this.remove()">'+
-      '</div>';
-    track.appendChild(card);
-  });
+  function renderCards(isClone){
+    BRANDS.forEach(function(b,idx){
+      var card=document.createElement('div');card.className='brand-card'+(isClone?' pf-clone':'');card.dataset.index=idx;
+      card.innerHTML='<div class="brand-thumb"><div class="brand-ph">'+PH+'<b>'+b.id+'</b></div>'+
+        '<img loading="lazy" alt="'+b.name+'" src="images/portfolio/'+b.id+'/1.jpg" onload="this.classList.add(\'loaded\');this.previousElementSibling.style.display=\'none\'" onerror="this.remove()">'+
+        '</div><div class="brand-name">'+b.name+'</div>';
+      track.appendChild(card);
+    });
+  }
+  renderCards(false);
+  renderCards(true); // duplicate set appended right after, so auto-scroll can loop seamlessly (last card flows straight into the first)
   var pfPrev=document.getElementById('pfPrev'),pfNext=document.getElementById('pfNext');
   function pw(){return track.clientWidth*0.86;}
-  pfPrev.onclick=function(){track.scrollBy({left:-pw(),behavior:'smooth'});};
-  pfNext.onclick=function(){track.scrollBy({left:pw(),behavior:'smooth'});};
-  function upd(){pfPrev.classList.toggle('disabled',track.scrollLeft<10);pfNext.classList.toggle('disabled',track.scrollLeft+track.clientWidth>=track.scrollWidth-10);}
-  track.addEventListener('scroll',upd);window.addEventListener('resize',upd);setTimeout(upd,120);
-  var sa=document.getElementById('pfShowAll');if(sa){sa.addEventListener('click',function(){track.classList.add('expanded');sa.classList.add('hidden');});}
-
-  // Slow auto-flowing scroll, pauses on hover/touch/manual nav
-  // (scroll-snap must be switched off while auto-playing — Chrome ignores
-  // direct scrollLeft writes on a mandatory-snap container otherwise)
-  var pfPlaying=true,pfHover=false,pfResumeT=null,pfSnapOn=true;
-  function pfSetSnap(on){if(on===pfSnapOn)return;pfSnapOn=on;track.style.scrollSnapType=on?'x mandatory':'none';}
-  function pfPause(ms){pfPlaying=false;if(pfResumeT)clearTimeout(pfResumeT);pfResumeT=setTimeout(function(){pfResumeT=null;if(!pfHover)pfPlaying=true;},ms||2500);}
-  function pfLoop(){
-    var active=pfPlaying&&!pfHover&&!track.classList.contains('expanded');
-    pfSetSnap(!active);
-    if(active){
-      var max=track.scrollWidth-track.clientWidth;
-      if(max>0){
-        if(track.scrollLeft>=max-1)track.scroll({left:0,behavior:'auto'});
-        else track.scrollBy({left:0.6,behavior:'auto'});
-      }
-    }
-    requestAnimationFrame(pfLoop);
+  var setWidth=0,pfSpeed=24;
+  function computeSetWidth(){
+    setWidth=track.scrollWidth/2;
+    var first=track.querySelector('.brand-card');
+    var gap=parseFloat(getComputedStyle(track).columnGap)||15;
+    var cardW=first?first.getBoundingClientRect().width:200;
+    pfSpeed=(cardW+gap)/5; // ~5s for one card to fully pass by - slow, steady "train" pace
   }
-  requestAnimationFrame(pfLoop);
-  track.addEventListener('mouseenter',function(){pfHover=true;});
-  track.addEventListener('mouseleave',function(){pfHover=false;});
-  track.addEventListener('touchstart',function(){pfPause(3500);},{passive:true});
-  pfPrev.addEventListener('click',function(){pfPause(3500);});
-  pfNext.addEventListener('click',function(){pfPause(3500);});
+  window.addEventListener('resize',computeSetWidth);setTimeout(computeSetWidth,120);
+  pfPrev.onclick=function(){pfStopAuto();
+    var cur=track.scrollLeft;
+    if(setWidth&&cur<pw()){cur+=setWidth;track.scrollTo({left:cur,behavior:'auto'});}
+    track.scrollTo({left:cur-pw(),behavior:'smooth'});
+    setTimeout(pfStartAuto,500);};
+  pfNext.onclick=function(){pfStopAuto();
+    var cur=track.scrollLeft;
+    if(setWidth&&cur>=setWidth){cur-=setWidth;track.scrollTo({left:cur,behavior:'auto'});}
+    track.scrollTo({left:cur+pw(),behavior:'smooth'});
+    setTimeout(pfStartAuto,500);};
+  var pfRAF=null,pfLastTs=null;
+  function pfTick(ts){
+    if(pfLastTs==null)pfLastTs=ts;
+    var dt=(ts-pfLastTs)/1000;pfLastTs=ts;
+    if(setWidth&&track.scrollWidth>track.clientWidth+10){
+      var next=track.scrollLeft+pfSpeed*dt;
+      if(next>=setWidth)next-=setWidth;
+      track.scrollLeft=next;
+    }
+    pfRAF=requestAnimationFrame(pfTick);
+  }
+  function pfStartAuto(){pfStopAuto();pfLastTs=null;pfRAF=requestAnimationFrame(pfTick);}
+  function pfStopAuto(){if(pfRAF)cancelAnimationFrame(pfRAF);pfRAF=null;}
+  track.addEventListener('mouseenter',pfStopAuto);
+  track.addEventListener('mouseleave',pfStartAuto);
+  track.addEventListener('touchstart',pfStopAuto,{passive:true});
+  track.addEventListener('touchend',pfStartAuto,{passive:true});
+  pfStartAuto();
+  var sa=document.getElementById('pfShowAll');if(sa){sa.addEventListener('click',function(){track.classList.add('expanded');sa.classList.add('hidden');});}
 
   var bm=document.getElementById('bm'),bmT=document.getElementById('bmTitle'),bmG=document.getElementById('bmGrid'),cur=[];
   track.addEventListener('click',function(e){var c=e.target.closest('.brand-card');if(c)openBrand(+c.dataset.index);});
   function openBrand(i){var b=BRANDS[i];bmT.textContent=b.name;bmG.innerHTML='';cur=[];
     for(var j=1;j<=b.imgs;j++){var s='images/portfolio/'+b.id+'/'+j+'.jpg';cur.push(s);
       var d=document.createElement('div');d.className='bm-img';d.dataset.i=j-1;
-      d.innerHTML='<div class="brand-ph">'+PH+'<b>'+j+'</b></div><img loading="lazy" src="'+s+'" onload="this.classList.add(\'loaded\')" onerror="this.remove()">';bmG.appendChild(d);}
+      d.innerHTML='<div class="brand-ph">'+PH+'<b>'+j+'</b></div><img loading="lazy" src="'+s+'" onload="this.classList.add(\'loaded\');this.previousElementSibling.style.display=\'none\'" onerror="this.remove()">';bmG.appendChild(d);}
     bm.classList.add('open');document.body.style.overflow='hidden';}
   function closeBrand(){bm.classList.remove('open');document.body.style.overflow='';}
   document.getElementById('bmClose').onclick=closeBrand;bm.addEventListener('click',function(e){if(e.target===bm)closeBrand();});
@@ -890,6 +904,10 @@
     layoutValues();
     setTimeout(layoutValues, 400);
   })();
+  document.querySelectorAll('.ct-form [required]').forEach(function(el){
+    el.addEventListener('invalid',function(){el.setCustomValidity('Please fill out this field.');});
+    el.addEventListener('input',function(){el.setCustomValidity('');});
+  });
   (function(){
     var form = document.getElementById('ctForm');
     if(!form) return;
